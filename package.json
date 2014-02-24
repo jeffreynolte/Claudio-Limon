@@ -1,0 +1,15 @@
+{
+  "name": "climon",
+  "version": "0.0.0",
+  "description": "Claudio Limon Website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "jade": "~1.1.5",
+    "express": "~3.4.8"
+  }
+}
