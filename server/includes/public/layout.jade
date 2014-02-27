@@ -6,7 +6,7 @@ html(lang='en')
     link(rel="stylesheet", href="/vendor/toastr/toastr.css")
     link(rel="stylesheet", href="/css/main.css")
   body(ng-app="app")
-    header.navbar.navbar-fixed-top.navbar-inverse
+    div.navbar.navbar-fixed-top.navbar-inverse
       nav.collapse.navbar-collapse.bs-navbar-collapse(role="navigation")  
         ul.nav.navbar-nav
           li
@@ -29,4 +29,4 @@ html(lang='en')
     section.content
       section.container
         block main-content
-  include admin_scripts
+  include scripts

@@ -1,0 +1,13 @@
+.container(ng-controller="clLoginFormCtrl", ng-hide="identity.isAuthenticated()")
+  h2 Please Signin
+  form
+    .form-group
+      label(for='username') Username
+      input#username.form-control(type='text', name="username", placeholder='Username', ng-model="username")
+
+    .form-group
+      label(for='password') Password
+      input#password.form-control(type='password', name="password", placeholder='Password', ng-model="password")
+  
+    .form-group
+      button.btn.btn-primary(type='submit', ng-click="signin(username, password)") Sign in      

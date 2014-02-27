@@ -1,0 +1,19 @@
+.row
+  .col-md-6
+    h2  Users
+    a.btn.btn-primary(href="/admin/users/new") Create User
+    table.table.table-bordered.table-striped.pull-left
+      thead
+        tr  
+          th Name
+          th Username
+          th Id
+          th Edit / Delete
+        tr(ng-repeat="user in users")
+          td {{user.firstName}}
+          td {{user.userName}}
+          td {{user._id}}
+          td
+            a(href="/admin/users/") Edit 
+            span  or 
+            a.delete-user(href="/admin/users/delete/", 'data-id=""') Delete              
