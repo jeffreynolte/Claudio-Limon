@@ -1,13 +1,22 @@
+//- vendor libs
 script(src="/vendor/jquery/dist/jquery.js")
 script(src="/vendor/bootstrap/dist/js/bootstrap.min.js")
 script(src="/vendor/toastr/toastr.js")
+
+//- angular
 script(src="/vendor/angular/angular.js")
 script(src="/vendor/angular-resource/angular-resource.js")
 script(src="/vendor/angular-route/angular-route.js")
 script(src="/app/app.js")
-script(src="/app/admin/clLoginFormCtrl.js")
-script(src="/app/admin/clIdentity.js")
+
+//- common / global
 script(src="/app/common/clNotifier.js")
-script(src="/app/admin/clAuth.js")
-script(src="/app/admin/clUser.js")
-script(src="/app/admin/clUserIndexCtrl.js") 
+
+//- account
+script(src="/app/admin/account/clIdentity.js")
+script(src="/app/admin/account/clLoginFormCtrl.js")
+script(src="/app/admin/account/clAuth.js")
+
+//- users
+script(src="/app/admin/users/clUser.js")
+script(src="/app/admin/users/clUserIndexCtrl.js") 
