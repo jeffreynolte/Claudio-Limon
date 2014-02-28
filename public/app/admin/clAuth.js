@@ -22,6 +22,13 @@ angular.module('app').factory('clAuth', function ($http, clIdentity, $q, clUser)
       });
       return dfd.promise;
       // body...
+    },
+    authorizeCurrentUserForRoute: function (role) {
+      if (clIdentity.isAuthorized(role)){
+        return true;          
+      } else {
+        return $q.reject('not authorized');
+      }
     }
   }
 })
