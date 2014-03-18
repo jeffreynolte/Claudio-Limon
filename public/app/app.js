@@ -15,8 +15,13 @@ angular.module('app').config(function($routeProvider, $locationProvider){
     .when('/', {templateUrl: '/partials/admin/main', controller: 'mainCtrl'})
     .when('/admin/users', {templateUrl: '/partials/admin/users/index', 
       controller: 'clUserIndexCtrl', resolve: routeRoleChecks.admin    
-  });
-  
+    })
+    .when('/admin/users/create', {templateUrl: '/partials/admin/users/create',
+      controller: 'clUserCreateUserCtrl', resolve: routeRoleChecks.admin
+    })
+    .when('/admin/users/delete', {controller: 'clUserDeleteUserCtrl', 
+      resolve: routeRoleChecks.admin
+    })  
 });
 
 angular.module('app').run(function ($rootScope, $location) {

@@ -1,0 +1,22 @@
+h2 Create New User
+form(name="createUserForm")
+    .form-group
+        label(for='fname') First name
+        input#name.form-control(type='text', name="fname", ng-model="fname", placeholder='First name', required)
+    .form-group
+        label(for='lname') Last name
+        input#name.form-control(type='text', name="lname", ng-model="lname", placeholder='Last name', required)
+    .form-group
+        label(for='email') Email
+        input#email.form-control(type='text', name="email", ng-model="email", placeholder='Email', required)
+    .form-group
+        label(for='username') Username
+        input#username.form-control(type='text', name="username", ng-model="username", placeholder='Username', required)
+    .form-group
+        label(for='password') Password
+        input#password.form-control(type='password', name="password", ng-model="password", placeholder='Password', required)
+    .form-group
+        span Admin?
+            input(type="checkbox", name="role",  ng-model="role" )
+    .form-group
+        button.btn.btn-primary(ng-click="createUser()", ng-disabled="createUserForm.$invalid") Add User
