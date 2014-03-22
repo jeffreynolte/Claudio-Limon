@@ -13,6 +13,7 @@ module.exports = function(config){
     firstName: String,
     lastName: String,
     userName: String ,
+    email: String ,
     salt: String,
     hashed_pwd: String,
     roles: [String]
@@ -21,6 +22,9 @@ module.exports = function(config){
   userSchema.methods = {
     authenticate: function (passwordToMatch) {
       return encrypt.hashPwd(this.salt, passwordToMatch) === this.hashed_pwd;
+    },
+    hasRole: function(role){
+        return this.roles.indexOf(role) > -1;
     }
   }
   
@@ -31,7 +35,7 @@ module.exports = function(config){
       var salt, hash;
       salt = encrypt.createSalt();
       hash = encrypt.hashPwd(salt,'jeffrey');
-      User.create({firstName: "Jeffrey", lastName: "Nolte", userName: "jeffreynolte", salt: salt, hashed_pwd: hash, roles: ['admin']});
+      User.create({firstName: "Jeffrey", lastName: "Nolte", userName: "jeffreynolte", email: "jnolte@getmoxied.net", salt: salt, hashed_pwd: hash, roles: ['admin']});
       salt = encrypt.createSalt();
       hash = encrypt.hashPwd(salt, 'mary');
       User.create({firstName: "Mary", lastName: "Nolte", userName: "marynolte", salt: salt, hashed_pwd: hash, roles: []});

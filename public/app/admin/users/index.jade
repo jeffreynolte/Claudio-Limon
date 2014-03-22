@@ -8,14 +8,12 @@
           th Last Name
           th Username
           th Id
-          th Edit / Delete
+          th Edit
         tr(ng-repeat="user in users")
           td {{user.firstName}}
           td {{user.lastName}}
           td {{user.userName}}
           td(ng-model="userId") {{user._id}}
           td
-            a(href="/admin/users/") Edit 
-            span  or 
-            a.delete-user(ng-click="deleteUser()" ) Delete
+            a(href="/admin/users/edit/{{user._id}}") Edit
      a.btn.btn-primary(href="/admin/users/create") Create User
