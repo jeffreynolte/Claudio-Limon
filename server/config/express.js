@@ -13,6 +13,7 @@ module.exports = function(app, config){
     app.use(express.logger('dev'));
     app.use(express.cookieParser());
     app.use(express.bodyParser());
+    app.use(express.methodOverride());
     app.use(express.session({secret: 'claudio limon soho'}));
     app.use(passport.initialize());
     app.use(passport.session());

@@ -42,6 +42,19 @@ angular.module('app').factory('clAuth', function ($http, clIdentity, $q, clUser)
 
         },
 
+        deleteUser: function (deleteUserData) {          
+          var deleteUser = new clUser(deleteUserData);
+          var dfd = $q.defer();
+
+          deleteUser.$delete({_id: deleteUserData._id}).then(function () {
+              console.log("deleted user");
+              dfd.resolve();
+          }, function (response) {
+              dfd.reject(response.data.reason);
+          });
+          return dfd.promise;          
+        },
+
         logoutUser: function () {
             var dfd = $q.defer();
             $http.post('/logout', {logout: true}).then(function () {
@@ -49,7 +62,6 @@ angular.module('app').factory('clAuth', function ($http, clIdentity, $q, clUser)
                 dfd.resolve();
             });
             return dfd.promise;
-            // body...
         },
         authorizeCurrentUserForRoute: function (role) {
             if (clIdentity.isAuthorized(role)) {
