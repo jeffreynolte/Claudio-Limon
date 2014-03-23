@@ -2,11 +2,11 @@ h2 Create Work
 form(name="createWorkForm")
   .form-group
     label(for='title') Title
-    input#title.form-control(type='text', name="title", ng-model="title", placeholder="Work Title", required)
+    input#title.form-control(type='text', name="title", ng-model="title", placeholder="Work Title")
 
   .form-group
     label(for='subtitle') Subtitle
-    input#subtitle.form-control(type='text', name="subtitle", ng-model="subtitle", placeholder="SubTitle", required)
+    input#subtitle.form-control(type='text', name="subtitle", ng-model="subtitle", placeholder="SubTitle")
     
   .form-group
     span Public ? 
@@ -19,8 +19,10 @@ form(name="createWorkForm")
   .form-group
     label(for='images') Images
     button.btn.btn-primary.btn-large(ng-click="pickPhotos()") Select photos
-    li(ng-repeat="fileUrl in files")
-      img(ng-src="{{fileUrl}}")
+    .images images: {{images}}
+    .images images: {{images.url}}
+    li(ng-repeat="image in images")
+      img(ng-src="{{image.url}}")
     
   .form-group
     label(for='categories') Categories

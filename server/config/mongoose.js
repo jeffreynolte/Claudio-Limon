@@ -45,7 +45,7 @@ module.exports = function(config){
     }
   })
 
-  // Work
+
   var workSchema = mongoose.Schema({
     title: String,
     subtitle: String,
@@ -60,5 +60,32 @@ module.exports = function(config){
   });
   
   var Work = mongoose.model('Work', workSchema);  
+    
+  var settingsSchema = mongoose.Schema({
+    page_title: String,
+    page_subtitle: String,
+    twitter_url: String,
+    facebook_url: String,
+    global_email: String,
+    description: String,
+    updated: {type: Date, default: Date.now},
+  });
+  var Settings = mongoose.model('Settings', settingsSchema);    
   
+  Settings.find({}).exec(function (err, collection) {
+    if(collection.length === 0){
+      Settings.create({
+        page_title: "Claudio Limon",
+        page_subtitle: "Artist &amp; Illustrator",
+        twitter_url: 'http://twitter.com',
+        facebook_url: "http://facebook.com",
+        global_email: "claudio@claudiolimon.com",
+        description: "Here is a sample page decription",
+        updated: {type: Date, default: Date.now}        
+      })
+    }
+  })
+  
+
+    
 }

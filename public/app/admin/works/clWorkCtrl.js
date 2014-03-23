@@ -1,37 +1,53 @@
-angular.module('app').controller('clWorkCtrl', function($scope, $location, clWork, clWorkApiService, clNotifier){
+angular.module('app').controller('clWorkCtrl', function($scope, $location, clWork, clWorkclWorkData, clNotifier){
 
   // get all works
-  $scope.works = clWorkApiService.query();
+  $scope.works = clWorkclWorkData.query();
   
   $scope.pickPhotos = function () {
-      var options = {
-          'multiple': true,
-          'container': 'modal',
-          'services': ['COMPUTER', 'FACEBOOK', 'DROPBOX', 'FLICKR', 'INSTAGRAM', 'GMAIL'],
-          'location': 'S3',
-          'metadata': true,
-          'maxsize': 2000 * 1024,
-          'persist': true
-      };
-      
-      filepicker.pick({
-          mimetypes: ['image/*', 'text/plain'],
-          container: 'window',
-          services:['COMPUTER', 'FACEBOOK', 'GMAIL'],
-        },
-        function(InkBlob){
-          console.log(JSON.stringify(InkBlob));
-        },
-        function(FPError){
-          console.log(FPError.toString());
-        }
-      );
+      // var options = {
+      //     'multiple': true,
+      //     'container': 'modal',
+      //     'services': ['COMPUTER', 'FACEBOOK', 'DROPBOX', 'FLICKR', 'INSTAGRAM', 'GMAIL'],
+      //     'location': 'S3',
+      //     'metadata': true,
+      //     'maxsize': 2000 * 1024,
+      //     'persist': true
+      // };
+      // 
+      // filepicker.pick({
+      //     mimetypes: ['image/*', 'text/plain'],
+      //     container: 'window',
+      //     services:['COMPUTER', 'FACEBOOK', 'GMAIL'],
+      //     multiple: true
+      //   },
+      //   function(images){
+      //     console.log("inside callback");
+      //     console.log(images)
+          $scope.handleImagesAdded();
+      //     $scope.handleImagesAdded(images)
+      //   },
+      //   function(FPError){
+      //     clNotifier.error(FPError.toString());
+      //   }
+      // );
   };
 
-  $scope.handleFilesAdded = function (files) {
-      for (var i = 0; i < files.length; i++) {
-          $scope.files.push(files[i]);
-      }
+  $scope.handleImagesAdded = function () {
+    // console.log("inside handleImagesAdded");    
+    // console.log(images)
+    // $scope.images = images;
+    
+    var images = {url: "https://www.filepicker.io/api/file/8gArSfS6i758iWWD5utg", filename: "Screen Shot 2014-01-06 at 3.59.14 PM.png", mimetype: "image/png", size: 7881, isWriteable: true} 
+    
+    console.log(images.length);
+    
+      // for (var i = 0; i < images.length; i++) {
+      //   console.log("inside loop");
+      //   // console.log($scope.images);
+      //   console.log(images.length);
+      //   console.log(images[0]);
+      //     $scope.images.push(images[i]);
+      // }
     
   };
     

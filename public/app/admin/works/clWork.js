@@ -1,7 +1,7 @@
-angular.module('app').factory('clWork', function ($q, clWorkApiService) {
+angular.module('app').factory('clWork', function ($q, clWorkData ) {
     return {
         createWork: function (newWorkData) {
-            var newWork = new clWorkApiService(newWorkData);
+            var newWork = new clWorkclWorkData(newWorkData);
             var dfd = $q.defer();
             newWork.$save().then(function () {
                 dfd.resolve();
@@ -12,7 +12,7 @@ angular.module('app').factory('clWork', function ($q, clWorkApiService) {
         },
 
         updateWork: function (newWorkData) {
-            var newWork = new clWorkApiService(newWorkData);
+            var newWork = new clWorkData(newWorkData);
             var dfd = $q.defer();
             newWork.$update().then(function () {
                 console.log("updated work");

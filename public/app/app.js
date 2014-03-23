@@ -31,6 +31,9 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
         .when('/admin/works/edit/:userId', {templateUrl: '/partials/admin/works/edit',
             controller: 'clWorkCtrl', resolve: routeRoleChecks.admin
         })
+        .when('/admin/settings', {templateUrl: '/partials/admin/settings',
+            controller: 'clSettingsCtrl', resolve: routeRoleChecks.admin
+        })
 });
 
 angular.module('app').run(function ($rootScope, $location) {

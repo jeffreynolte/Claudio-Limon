@@ -1,8 +1,10 @@
 var auth = require('./auth'),
     users = require('../controllers/users'),
     works = require('../controllers/works'),
+    settings = require('../controllers/settings'),
     mongoose = require('mongoose'),  
     User = mongoose.model('User'),
+    Settings = mongoose.model('Settings'),
     Work = mongoose.model('Work');
     
 
@@ -19,7 +21,10 @@ module.exports = function (app) {
   app.post('/api/works', works.createWork);
   app.put('/api/works', auth.requiresRole('admin'), works.updateWork);
   app.delete('/api/works', works.deleteWork);
-
+  
+  // settings api
+  app.get('/api/settings', auth.requiresRole('admin'), settings.getSettings);
+  app.put('/api/settings', auth.requiresRole('admin'), settings.updateSettings);
   
   app.get('/partials/*', function(req, res){
     res.render('../../public/app/' + req.params);
