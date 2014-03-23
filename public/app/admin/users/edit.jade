@@ -19,4 +19,5 @@ form(name="createUserForm")
         span Admin?
             input(type="checkbox", name="role",  ng-model="admin", ng-true-value="YES", ng-false-value="NO")
     .form-group
-        button.btn.btn-primary(ng-click="updateUser()") Update {{fname}}
+        button.btn.btn-primary(ng-click="updateUser()") Update User 
+        button.btn.btn-primary.btn-danger(ng-click="deleteUser()", ng-hide="sameUserCheck()") Delete User 
