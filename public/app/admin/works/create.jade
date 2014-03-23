@@ -1,0 +1,30 @@
+h2 Create Work
+form(name="createWorkForm")
+  .form-group
+    label(for='title') Title
+    input#title.form-control(type='text', name="title", ng-model="title", placeholder="Work Title", required)
+
+  .form-group
+    label(for='subtitle') Subtitle
+    input#subtitle.form-control(type='text', name="subtitle", ng-model="subtitle", placeholder="SubTitle", required)
+    
+  .form-group
+    span Public ? 
+      input(type="checkbox", name="isPublic", ng-model="isPublic")
+
+  .form-group
+    label(for='description') Description
+    textarea#description.form-control(type='text', name="description", ng-model="description", placeholder="Description")
+
+  .form-group
+    label(for='images') Images
+    button.btn.btn-primary.btn-large(ng-click="pickPhotos()") Select photos
+    li(ng-repeat="fileUrl in files")
+      img(ng-src="{{fileUrl}}")
+    
+  .form-group
+    label(for='categories') Categories
+    input#categories.form-control(type='text', name="categories", placeholder='Categories', ng-model="categories")
+
+  .form-group
+      button.btn.btn-primary(ng-click="createWork()", ng-disabled="createWorkForm.$invalid") Add User

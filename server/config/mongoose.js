@@ -18,7 +18,7 @@ module.exports = function(config){
     hashed_pwd: String,
     roles: [String]
   });
-  
+        
   userSchema.methods = {
     authenticate: function (passwordToMatch) {
       return encrypt.hashPwd(this.salt, passwordToMatch) === this.hashed_pwd;
@@ -44,5 +44,21 @@ module.exports = function(config){
       User.create({firstName: "Chris", lastName: "Nolte", userName: "chrisnolte", salt: salt, hashed_pwd: hash });      
     }
   })
+
+  // Work
+  var workSchema = mongoose.Schema({
+    title: String,
+    subtitle: String,
+    isPublic: Boolean,
+    description: String,
+    updated: {type: Date, default: Date.now},
+    images: [{
+      url: String,
+      filename: String
+    }],
+    categories: []
+  });
+  
+  var Work = mongoose.model('Work', workSchema);  
   
 }

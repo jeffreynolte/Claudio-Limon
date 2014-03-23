@@ -1,0 +1,23 @@
+.row
+  .col-md-6
+    h2 Works
+    table.table.table-bordered.table-striped.pull-left
+      thead
+        tr  
+          th Title
+          th Subtitle
+          th Public ?
+          th Description
+          th Categories
+          th Updated
+          th Edit
+        tr(ng-repeat="work in works")
+          td {{work.title}}
+          td {{work.subtitle}}
+          td {{work.isPublic}}
+          td {{work.description}}
+          td {{work.categories}}
+          td {{work.updated | date:'MM/dd/yyyy @ h:mma'}}
+          td
+            a(href="/admin/users/works/{{work._id}}") Edit 
+    a.btn.btn-primary(href="/admin/works/create") Create Work                      

@@ -1,15 +1,24 @@
 var auth = require('./auth'),
     users = require('../controllers/users'),
+    works = require('../controllers/works'),
     mongoose = require('mongoose'),  
-    User = mongoose.model('User');
+    User = mongoose.model('User'),
+    Work = mongoose.model('Work');
     
 
 module.exports = function (app) {
   
+  // users api
   app.get('/api/users', auth.requiresRole('admin'), users.getUsers);
   app.post('/api/users', users.createUser);
   app.put('/api/users', auth.requiresRole('admin'), users.updateUser);
   app.delete('/api/users', users.deleteUser);
+  
+  // work api
+  app.get('/api/works', auth.requiresRole('admin'), works.getWorks);
+  app.post('/api/works', works.createWork);
+  app.put('/api/works', auth.requiresRole('admin'), works.updateWork);
+  app.delete('/api/works', works.deleteWork);
 
   
   app.get('/partials/*', function(req, res){

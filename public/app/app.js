@@ -22,6 +22,15 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
         .when('/admin/users/edit/:userId', {templateUrl: '/partials/admin/users/edit',
             controller: 'clUserEditUserCtrl', resolve: routeRoleChecks.admin
         })
+        .when('/admin/works', {templateUrl: '/partials/admin/works/index',
+            controller: 'clWorkCtrl', resolve: routeRoleChecks.admin
+        })
+        .when('/admin/works/create', {templateUrl: '/partials/admin/works/create',
+            controller: 'clWorkCtrl', resolve: routeRoleChecks.admin
+        })
+        .when('/admin/works/edit/:userId', {templateUrl: '/partials/admin/works/edit',
+            controller: 'clWorkCtrl', resolve: routeRoleChecks.admin
+        })
 });
 
 angular.module('app').run(function ($rootScope, $location) {
