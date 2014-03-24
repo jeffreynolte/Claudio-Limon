@@ -1,56 +1,40 @@
-angular.module('app').controller('clWorkCtrl', function($scope, $location, clWork, clWorkclWorkData, clNotifier){
+angular.module('app').controller('clWorkCtrl', function($scope, $location, clWork, clWorkData, clNotifier){
 
   // get all works
-  $scope.works = clWorkclWorkData.query();
+  $scope.works = clWorkData.query();
+  console.log($scope.works);
+  
   
   $scope.pickPhotos = function () {
-      // var options = {
-      //     'multiple': true,
-      //     'container': 'modal',
-      //     'services': ['COMPUTER', 'FACEBOOK', 'DROPBOX', 'FLICKR', 'INSTAGRAM', 'GMAIL'],
-      //     'location': 'S3',
-      //     'metadata': true,
-      //     'maxsize': 2000 * 1024,
-      //     'persist': true
-      // };
-      // 
-      // filepicker.pick({
-      //     mimetypes: ['image/*', 'text/plain'],
-      //     container: 'window',
-      //     services:['COMPUTER', 'FACEBOOK', 'GMAIL'],
-      //     multiple: true
-      //   },
-      //   function(images){
-      //     console.log("inside callback");
-      //     console.log(images)
-          $scope.handleImagesAdded();
-      //     $scope.handleImagesAdded(images)
-      //   },
-      //   function(FPError){
-      //     clNotifier.error(FPError.toString());
-      //   }
-      // );
+          
+      filepicker.pickMultiple({
+          mimetypes: ['image/*', 'text/plain'],
+          container: 'window',
+          services:['COMPUTER', 'FACEBOOK', 'GMAIL']
+        },
+        function(images){
+          $scope.$apply(function(){
+            $scope.handleImagesAdded(images);
+          });
+        },
+        function(FPError){
+          clNotifier.error(FPError.toString());
+        }
+      );
   };
 
-  $scope.handleImagesAdded = function () {
-    // console.log("inside handleImagesAdded");    
-    // console.log(images)
-    // $scope.images = images;
-    
-    var images = {url: "https://www.filepicker.io/api/file/8gArSfS6i758iWWD5utg", filename: "Screen Shot 2014-01-06 at 3.59.14 PM.png", mimetype: "image/png", size: 7881, isWriteable: true} 
-    
-    console.log(images.length);
-    
-      // for (var i = 0; i < images.length; i++) {
-      //   console.log("inside loop");
-      //   // console.log($scope.images);
-      //   console.log(images.length);
-      //   console.log(images[0]);
-      //     $scope.images.push(images[i]);
-      // }
-    
+  $scope.handleImagesAdded = function (images) {
+    $scope.images = images;
   };
-    
+  
+  $scope.removeImage = function(image){ 
+    var c = confirm("Are you sure you want to remove this image?");
+    if(c === true){
+      var index = $scope.images.indexOf(image)
+      $scope.images.splice(index, 1);           
+    }
+  }
+      
   // create work
   $scope.createWork = function(){
       

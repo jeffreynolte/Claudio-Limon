@@ -16,17 +16,19 @@ form(name="createWorkForm")
     label(for='description') Description
     textarea#description.form-control(type='text', name="description", ng-model="description", placeholder="Description")
 
-  .form-group
+  .form-group.images
     label(for='images') Images
     button.btn.btn-primary.btn-large(ng-click="pickPhotos()") Select photos
-    .images images: {{images}}
-    .images images: {{images.url}}
-    li(ng-repeat="image in images")
-      img(ng-src="{{image.url}}")
+    ul
+      li(ng-repeat="image in images")
+        img(ng-src="{{image.url}}/convert?w=100&amp;h=100&amp;fit=scale", alt="{{image.filename}}")
+        input(type="hidden", name="images[{{$index}}][{{image.url}}]", value="{{image.filename}}")
+        input(type="hidden", name="images[{{}}][{{image.url}}]", value="{{image.url}}")
+        a(href="#", ng-click="removeImage(image)") -
     
   .form-group
     label(for='categories') Categories
     input#categories.form-control(type='text', name="categories", placeholder='Categories', ng-model="categories")
 
   .form-group
-      button.btn.btn-primary(ng-click="createWork()", ng-disabled="createWorkForm.$invalid") Add User
+      button.btn.btn-primary(ng-click="createWork()", ng-disabled="createWorkForm.$invalid") Add Work

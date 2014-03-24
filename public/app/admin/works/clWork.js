@@ -1,7 +1,7 @@
 angular.module('app').factory('clWork', function ($q, clWorkData ) {
     return {
         createWork: function (newWorkData) {
-            var newWork = new clWorkclWorkData(newWorkData);
+            var newWork = new clWorkData(newWorkData);
             var dfd = $q.defer();
             newWork.$save().then(function () {
                 dfd.resolve();
