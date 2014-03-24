@@ -7,9 +7,9 @@ form(name="createWorkForm")
   .form-group
     label(for='subtitle') Subtitle
     input#subtitle.form-control(type='text', name="subtitle", ng-model="subtitle", placeholder="SubTitle")
-    
+
   .form-group
-    span Public ? 
+    span Public ?
       input(type="checkbox", name="isPublic", ng-model="isPublic")
 
   .form-group
@@ -25,7 +25,7 @@ form(name="createWorkForm")
         input(type="hidden", name="images[{{$index}}][{{image.url}}]", value="{{image.filename}}")
         input(type="hidden", name="images[{{}}][{{image.url}}]", value="{{image.url}}")
         a(href="#", ng-click="removeImage(image)") -
-    
+
   .form-group
     label(for='categories') Categories
     input#categories.form-control(type='text', name="categories", placeholder='Categories', ng-model="categories")

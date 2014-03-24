@@ -3,11 +3,12 @@ html(lang='en')
   head
     link(href="/favicon.ico", rel="shortcut icon", type="image/x-icon")
     link(rel="stylesheet", href="/vendor/bootstrap/dist/css/bootstrap.css")
+    link(rel="stylesheet", href="/vendor/font-awesome/css/font-awesome.min.css")
     link(rel="stylesheet", href="/vendor/toastr/toastr.css")
     link(rel="stylesheet", href="/css/main.css")
   body(ng-app="app")
     div.navbar.navbar-fixed-top.navbar-inverse
-      nav.collapse.navbar-collapse.bs-navbar-collapse(role="navigation")  
+      nav.collapse.navbar-collapse.bs-navbar-collapse(role="navigation")
         ul.nav.navbar-nav
           li
             a.brand(href="/admin") Claudio Limon Admin
@@ -25,7 +26,7 @@ html(lang='en')
               b.caret
             ul.dropdown-menu
               li
-                a(href="/admin/signout") Signout                                          
+                a(href="/admin/signout") Signout
     section.content
       section.container
         block main-content
