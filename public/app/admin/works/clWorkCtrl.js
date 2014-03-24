@@ -2,8 +2,6 @@ angular.module('app').controller('clWorkCtrl', function($scope, $location, clWor
 
   // get all works
   $scope.works = clWorkData.query();
-  console.log($scope.works);
-  
   
   $scope.pickPhotos = function () {
           
