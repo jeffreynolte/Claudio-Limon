@@ -48,8 +48,18 @@ module.exports = function (app) {
       bootstrappedUser: req.user
     });
   });
+
+  app.get('/*', function(req, res){
+    console.log("render /")
+    res.render('index');
+  });  
   
-  app.get('*', function(req, res){
-    res.render('public/index');
-  });
+  // app.get('/*', function(req, res){
+  //   res.render('index');
+  // });
+  
+  // app.get('*', function(req, res){
+  //   console.log("render ")
+  //   res.render('index');
+  // });
 }
