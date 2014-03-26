@@ -1,0 +1,60 @@
+doctype html
+html(lang='en', xmlns='http://www.w3.org/1999/xhtml', xmlns:fb='https://www.facebook.com/2008/fbml', itemscope='itemscope', itemtype='http://schema.org/Product')
+  meta(charset='utf-8')
+  meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+  meta(name='viewport', content='width=device-width,initial-scale=1')
+
+  title= appName+' - '+title
+  meta(http-equiv='Content-type', content='text/html;charset=UTF-8')
+  meta(name="keywords", content="node.js, express, mongoose, mongodb, angularjs")
+  meta(name="description", content="MEAN - A Modern Stack: MongoDB, ExpressJS, AngularJS, NodeJS. (BONUS: Passport User Support).")
+
+  link(href='/img/icons/favicon.ico', rel='shortcut icon', type='image/x-icon')
+
+  meta(property='fb:app_id', content='APP_ID')
+  meta(property='og:title', content='')
+  meta(property='og:description', content='MEAN - A Modern Stack: MongoDB, ExpressJS, AngularJS, NodeJS. (BONUS: Passport User Support).')
+  meta(property='og:type', content='website')
+  meta(property='og:url', content='APP_URL')
+  meta(property='og:image', content='APP_LOGO')
+  meta(property='og:site_name', content='MEAN - A Modern Stack')
+  meta(property='fb:admins', content='APP_ADMIN')  
+  link(rel='stylesheet', href='/lib/jquery.flexslider/css/flexslider.css')
+  link(rel="stylesheet", href="/css/main-public.css")
+
+  //if lt IE 9
+    script(src='http://html5shim.googlecode.com/svn/trunk/html5.js')
+  body.public(ng-app="app")
+    div.navigation
+      h1 Claudio Limon
+      nav.social
+        ul
+          li.facebook
+            a(href="#", title="Facebook") f
+          li.twitter
+            a(href="#", title="Twitter") t
+          li.behance
+            a(href="#", title="Behance") be
+      nav
+        ul
+          li
+            a(href="/") home
+          li
+            a(href="/art") work
+          li
+            a(href="#") blog
+          li
+            a(href="/about") about
+          li
+            a(href="#") contact
+    .contact-container
+      p Contact Claudio
+      form(action='/new_inquiry', method='post', id='contact-form')
+        input(name="inquiry_name", id='inquiry_name', type='text', placeholder='Name') 
+        input(name="inquiry_email", id='inquiry_email', type='text', placeholder='Email') 
+        textarea(name="inquiry_message", id='inquiry_message', type='text', placeholder='Message')
+        input(id='submit-inquiry', type='submit', value='Send') 
+    section.content(ng-controller="mainCtrl")
+      section.container
+        block main-content
+    include scripts

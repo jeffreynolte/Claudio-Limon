@@ -12,7 +12,11 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
 
     $locationProvider.html5Mode(true);
     $routeProvider
-        .when('/', {templateUrl: '/partials/admin/main', controller: 'mainCtrl'})
+        .when('/', {templateUrl: '/partials/index', controller: 'mainCtrl'})
+        .when('/about', {templateUrl: '/partials/about', controller: 'mainCtrl'})
+        .when('/work-index', {templateUrl: '/partials/work-index', controller: 'mainCtrl'})
+        .when('/work-detail', {templateUrl: '/partials/work-detail', controller: 'mainCtrl'})
+        .when('/contact', {templateUrl: '/partials/contact', controller: 'mainCtrl'})
         .when('/admin/users', {templateUrl: '/partials/admin/users/index',
             controller: 'clUserIndexCtrl', resolve: routeRoleChecks.admin
         })
@@ -33,7 +37,7 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
         })
         .when('/admin/settings', {templateUrl: '/partials/admin/settings',
             controller: 'clSettingsCtrl', resolve: routeRoleChecks.admin
-        })
+        })        
 });
 
 angular.module('app').run(function ($rootScope, $location) {
