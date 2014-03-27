@@ -2,17 +2,20 @@
 script(src="/vendor/jquery/dist/jquery.js")
 script(src="/vendor/bootstrap/dist/js/bootstrap.min.js")
 script(src="/vendor/toastr/toastr.js")
+script(src="/vendor/flexslider/jquery.flexslider.js")
 
 //- angular
 script(src="/vendor/angular/angular.js")
 script(src="/vendor/angular-resource/angular-resource.js")
 script(src="/vendor/angular-route/angular-route.js")
+script(src="/vendor/textAngular/textAngular.js")
+script(src="/vendor/textAngular/textAngular-sanitize.js")
 script(src="/app/app.js")
 
 //- common / global
 script(src="/app/common/clNotifier.js")
 script(type='text/javascript').
-  (function(a){if(window.filepicker){return}var b=a.createElement("script");b.type="text/javascript";b.async=!0;b.src=("https:"===a.location.protocol?"https:":"http:")+"//api.filepicker.io/v1/filepicker.js";var c=a.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c);var d={};d._queue=[];var e="pick,pickMultiple,pickAndStore,read,write,writeUrl,export,convert,store,storeUrl,remove,stat,setKey,constructWidget,makeDropPane".split(",");var f=function(a,b){return function(){b.push([a,arguments])}};for(var g=0;g<e.length;g++){d[e[g]]=f(e[g],d._queue)}window.filepicker=d})(document); 
+  (function(a){if(window.filepicker){return}var b=a.createElement("script");b.type="text/javascript";b.async=!0;b.src=("https:"===a.location.protocol?"https:":"http:")+"//api.filepicker.io/v1/filepicker.js";var c=a.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c);var d={};d._queue=[];var e="pick,pickMultiple,pickAndStore,read,write,writeUrl,export,convert,store,storeUrl,remove,stat,setKey,constructWidget,makeDropPane".split(",");var f=function(a,b){return function(){b.push([a,arguments])}};for(var g=0;g<e.length;g++){d[e[g]]=f(e[g],d._queue)}window.filepicker=d})(document);
   filepicker.setKey('AO4seL8kyRUKSj4B9ZH3gz');
 
 //- account
@@ -22,7 +25,7 @@ script(src="/app/admin/account/clAuth.js")
 
 //- users
 script(src="/app/admin/users/clUser.js")
-script(src="/app/admin/users/clUserIndexCtrl.js") 
+script(src="/app/admin/users/clUserIndexCtrl.js")
 script(src="/app/admin/users/clUserCreateUserCtrl.js")
 script(src="/app/admin/users/clUserEditUserCtrl.js")
 
