@@ -3,6 +3,7 @@ body.public {
   color: #fff;
   height: 100%;
   overflow: hidden;
+  margin: 0;
 }
 body.public a {
   color: #fff;
@@ -273,7 +274,7 @@ body.public .navigation .social .behance {
   height: 100%;
 }
 .flexslider .flex-control-nav {
-  top: 440px;
+  top: 560px;
   z-index: 900;
 }
 .flexslider .flex-control-nav li a {
