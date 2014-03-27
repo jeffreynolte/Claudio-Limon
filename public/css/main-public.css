@@ -63,28 +63,23 @@ body.public .navigation .social .behance {
 }
 .info {
   position: absolute;
-  top: 300px;
+  top: 420px;
   z-index: 999;
   width: 100%;
   text-align: center;
 }
-.info h1 {
-  font-size: 72px;
+.info h1.logo {
+  height: 76px;
   position: relative;
-}
-.info h1 span {
-  display: inline;
-  font-size: 14px;
-  position: absolute;
-  top: 14px;
-  right: -295px;
+  background: url("../img/logo.png") 50% 50% no-repeat;
+  text-indent: -999em;
 }
 .info span {
   width: 100%;
   display: block;
   font-style: italic;
   text-shadow: 1px 1px 0px #000;
-  font-size: 17px;
+  font-size: 20px;
   letter-spacing: 1px;
 }
 .home-links {
