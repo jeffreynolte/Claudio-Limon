@@ -1,6 +1,6 @@
 .info
-  h1 CLAUDIO LIMON 
-    span&reg;
+  h1 CLAUDIO LIMON
+    span &reg;
   span "Art must be a form to connect the heart with the brain"
 .home-links
   ul
@@ -10,22 +10,8 @@
       a(href="#") design
     li
       a(href="#") illustration
-.flexslider
-  ul.slides
-    li
-      a(href="#")
-        img(src='/img/web-limon-01.jpg')
-    li
-      a(href="#")
-        img(src='/img/web-limon-02.jpg')
-    li
-      a(href="#")
-        img(src='/img/web-limon-03.jpg')
-    li
-      a(href="#")
-        img(src='/img/web-limon-04.jpg')
-    li
-      a(href="#")
-        img(src='/img/web-limon-05.jpg')    
+flex-slider(slide="s in slides" animation="slide")
+  li
+    img(ng-src="{{s}}")
 script(type="text/javascript").
   // window.user = !{ user };

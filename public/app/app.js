@@ -1,4 +1,4 @@
-angular.module('app', ['ngResource', 'ngRoute', 'textAngular']);
+angular.module('app', ['ngResource', 'ngRoute', 'textAngular', 'angular-flexslider']);
 
 angular.module('app').config(function ($routeProvider, $locationProvider) {
     var routeRoleChecks = {
@@ -37,7 +37,7 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
         })
         .when('/admin/settings', {templateUrl: '/partials/admin/settings',
             controller: 'clSettingsCtrl', resolve: routeRoleChecks.admin
-        })        
+        })
 });
 
 angular.module('app').run(function ($rootScope, $location) {
