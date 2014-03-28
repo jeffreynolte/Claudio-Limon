@@ -1,4 +1,6 @@
-angular.module('app').factory('clInquiries', function ($q, clInquiriesCtrl, clInquiriesData  ) {
+'use strict';
+
+angular.module('app').factory('clInquiries', function ($q, clInquiriesData) {
     return {
         createInquiry: function (newInquiryData) {
             var newInquiry = new clInquiry(newInquiryData);
@@ -11,7 +13,7 @@ angular.module('app').factory('clInquiries', function ($q, clInquiriesCtrl, clIn
             return dfd.promise;
         },
 
-        deleteInquiry: function (deleteInquiryData) {          
+        deleteInquiry: function (deleteInquiryData) {
           var deleteInquiry = new clInquiry(deleteInquiryData);
           var dfd = $q.defer();
 
@@ -21,7 +23,7 @@ angular.module('app').factory('clInquiries', function ($q, clInquiriesCtrl, clIn
           }, function (response) {
               dfd.reject(response.data.reason);
           });
-          return dfd.promise;          
+          return dfd.promise;
         }
     }
 })

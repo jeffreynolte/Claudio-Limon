@@ -47,10 +47,10 @@ html(lang='en', xmlns='http://www.w3.org/1999/xhtml', xmlns:fb='https://www.face
           li
             a(href="/about") about
           li
-            a(href="#") contact
-      .contact-container
+            a(href ng-click='toggleContact()') contact
+      .contact-container(ng-hide='hideContact')
         p Contact Claudio
-        form(name="sendInquiryForm", ng-controller="clInquiriesCtrl")
+        form(name="sendInquiryForm", ng-controller='clInquiriesCtrl')
 
           input(name="sender_name", id="sender_name", ng-model="sender_name", type="text", placeholder="Name")
 
