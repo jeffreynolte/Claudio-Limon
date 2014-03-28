@@ -38,6 +38,9 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
         .when('/admin/settings', {templateUrl: '/partials/admin/settings',
             controller: 'clSettingsCtrl', resolve: routeRoleChecks.admin
         })
+        .when('/admin/inquiries', {templateUrl: '/partials/admin/inquiries',
+            controller: 'clInquiriesCtrl', resolve: routeRoleChecks.admin
+        })
 });
 
 angular.module('app').run(function ($rootScope, $location) {
@@ -51,6 +54,9 @@ angular.module('app').run(function ($rootScope, $location) {
 angular.module('app').controller('mainCtrl', function ($scope, clIdentity, clAuth, clNotifier, $location) {
     $scope.identity = clIdentity;
     $scope.myVar = "Hello Angular World";
+    
+    
+    
 
     $scope.signout = function () {
         clAuth.logoutUser().then(function () {

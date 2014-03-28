@@ -1,0 +1,17 @@
+.row
+  .col-md-6
+    h2 Inquiries
+    table.table.table-bordered.table-striped.pull-left
+      thead
+        tr  
+          th Name
+          th Email
+          th Message
+          th Date Sent
+          th Delete
+        tr(ng-repeat="inquiry in inquiries")
+          td {{inquiry.sender_name}}
+          td {{inquiry.sender_email}}
+          td {{inquiry.sender_message}}
+          td {{inquiry.updated | date:'MM/dd/yyyy @ h:mma'}}
+            a(href="/admin/users/works/{{work._id}}") Delete 

@@ -86,6 +86,16 @@ module.exports = function(config){
     }
   })
   
+  
+  var inquiriesSchema = mongoose.Schema({
+    sender_name: String,
+    sender_email: String,
+    sender_message: String,
+    updated: {type: Date, default: Date.now},
+  });
+  
+  var Inquiries = mongoose.model('Inquiries', settingsSchema);    
+  
 
     
 }
