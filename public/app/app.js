@@ -1,4 +1,4 @@
-angular.module('app', ['ngResource', 'ngRoute', 'textAngular', 'angular-flexslider']);
+angular.module('app', ['ngResource', 'ngRoute', 'textAngular', 'angular-flexslider', 'ngAnimate']);
 
 angular.module('app').config(function ($routeProvider, $locationProvider) {
     var routeRoleChecks = {
@@ -14,8 +14,8 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
     $routeProvider
         .when('/', {templateUrl: '/partials/index', controller: 'mainCtrl'})
         .when('/about', {templateUrl: '/partials/about', controller: 'mainCtrl'})
-        .when('/work-index', {templateUrl: '/partials/work-index', controller: 'mainCtrl'})
-        .when('/work-detail', {templateUrl: '/partials/work-detail', controller: 'mainCtrl'})
+        .when('/work', {templateUrl: '/partials/work-index', controller: 'mainCtrl'})
+        .when('/work/detail', {templateUrl: '/partials/work-detail', controller: 'mainCtrl'})
         .when('/contact', {templateUrl: '/partials/contact', controller: 'mainCtrl'})
         .when('/admin/users', {templateUrl: '/partials/admin/users/index',
             controller: 'clUserIndexCtrl', resolve: routeRoleChecks.admin

@@ -2,7 +2,11 @@
 
 angular.module('app').controller('mainCtrl', function ($scope, clIdentity, clAuth, clNotifier, $location) {
     $scope.identity = clIdentity;
-    $scope.myVar = "Hello Angular World";
+    $scope.showContact = false;
+
+    $scope.toggleContact = function() {
+      $scope.showContact = !$scope.showContact;
+    };
 
     $scope.signout = function () {
         clAuth.logoutUser().then(function () {
@@ -12,6 +16,8 @@ angular.module('app').controller('mainCtrl', function ($scope, clIdentity, clAut
             $location.path('/admin');
         })
     }
+
+    $scope.aboutSlides = ['/img/limon-about.jpg'];
 
     $scope.slides = [
       '/img/web-limon-01.jpg',

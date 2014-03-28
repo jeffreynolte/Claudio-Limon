@@ -1,3 +1,5 @@
+body
+  font-family: 'Asap', sans-serif;
 body.public
   background: #eee;
   color:#fff;
@@ -6,6 +8,7 @@ body.public
   margin: 0;
   a
     color:#fff;
+    text-decoration: none;
   .navigation
     width:100%;
     height:auto;
@@ -220,6 +223,8 @@ body.public
   height: 372px;
   z-index: 1000;
   background: #FFFFFF;
+  padding-left: 20px;
+  opacity: 1;
   p
     color: #9C9F9E;
 
@@ -238,6 +243,14 @@ body.public
     padding: 8px;
     height: 135px;
     resize: none;
+  &.ng-hide-add,
+  &.ng-hide-remove
+    transition: 0.5s linear all;
+    -webkit-transition: 0.5s linear all;
+    display: block !important;
+  &.ng-hide
+    opacity: 0;
+    top: -600px;
 
 .flexslider
   margin:0;

@@ -1,28 +1,24 @@
-include ./layouts/public_default
-block content
-  .about-content
-    p
-      | #{content}
-    p 
-      | #{content}
-    p 
-      | #{content}
-    p 
-      | #{content}
-    nav.social
-      ul
-        li.email
-          a(href="mailto:#{emailAddress}", title="email") email me
-        li.facebook
-          a(href="#{facebookLink}", title="Facebook") f
-        li.twitter
-          a(href="#{twitterLink}", title="Twitter") t
-        li.behance
-          a(href="#{behanceLink}", title="Behance") be
-  .flexslider
-    ul.slides
-      li
-        a(href="#")
-          img(src='/img/limon-about.jpg')      
-  script(type="text/javascript").
-    // window.user = !{ user };
+.about-content
+  p
+    | #{content}
+  p
+    | #{content}
+  p
+    | #{content}
+  p
+    | #{content}
+  nav.social
+    ul
+      li.email
+        a(href="mailto:#{emailAddress}", title="email") email me
+      li.facebook
+        a(href="#{facebookLink}", title="Facebook") f
+      li.twitter
+        a(href="#{twitterLink}", title="Twitter") t
+      li.behance
+        a(href="#{behanceLink}", title="Behance") be
+flex-slider(slide="s in aboutSlides" animation="slide")
+  li
+    img(ng-src="{{s}}")
+script(type="text/javascript").
+  // window.user = !{ user };

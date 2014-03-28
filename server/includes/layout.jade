@@ -26,7 +26,7 @@ html(lang='en', xmlns='http://www.w3.org/1999/xhtml', xmlns:fb='https://www.face
   //if lt IE 9
     script(src='http://html5shim.googlecode.com/svn/trunk/html5.js')
   body.public(ng-app="app")
-    div.navigation
+    div.navigation(ng-controller='navCtrl')
       h1 Claudio Limon
       nav.social
         ul
@@ -41,20 +41,20 @@ html(lang='en', xmlns='http://www.w3.org/1999/xhtml', xmlns:fb='https://www.face
           li
             a(href="/") home
           li
-            a(href="/art") work
+            a(href="/work") work
           li
             a(href="#") blog
           li
             a(href="/about") about
           li
-            a(href="#") contact
-    .contact-container
-      p Contact Claudio
-      form(action='/new_inquiry', method='post', id='contact-form')
-        input(name="inquiry_name", id='inquiry_name', type='text', placeholder='Name')
-        input(name="inquiry_email", id='inquiry_email', type='text', placeholder='Email')
-        textarea(name="inquiry_message", id='inquiry_message', type='text', placeholder='Message')
-        input(id='submit-inquiry', type='submit', value='Send')
+            a(href ng-click="toggleContact()") contact
+      .contact-container(ng-hide='hideContact')
+        p Contact Claudio
+        form(action='/new_inquiry', method='post', id='contact-form')
+          input(name="inquiry_name", id='inquiry_name', type='text', placeholder='Name')
+          input(name="inquiry_email", id='inquiry_email', type='text', placeholder='Email')
+          textarea(name="inquiry_message", id='inquiry_message', type='text', placeholder='Message')
+          input(id='submit-inquiry', type='submit', value='Send')
     section.content(ng-controller="mainCtrl")
       section.container
         block main-content

@@ -1,3 +1,6 @@
+body {
+  font-family: 'Asap', sans-serif;
+}
 body.public {
   background: #eee;
   color: #fff;
@@ -7,6 +10,7 @@ body.public {
 }
 body.public a {
   color: #fff;
+  text-decoration: none;
 }
 body.public .navigation {
   width: 100%;
@@ -239,6 +243,8 @@ body.public .navigation .social .behance {
   height: 372px;
   z-index: 1000;
   background: #fff;
+  padding-left: 20px;
+  opacity: 1;
 }
 .contact-container p {
   color: #9c9f9e;
@@ -258,6 +264,16 @@ body.public .navigation .social .behance {
   padding: 8px;
   height: 135px;
   resize: none;
+}
+.contact-container.ng-hide-add,
+.contact-container.ng-hide-remove {
+  transition: 0.5s linear all;
+  -webkit-transition: 0.5s linear all;
+  display: block !important;
+}
+.contact-container.ng-hide {
+  opacity: 0;
+  top: -600px;
 }
 .flexslider {
   margin: 0;
