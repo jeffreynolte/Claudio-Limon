@@ -49,12 +49,21 @@ html(lang='en', xmlns='http://www.w3.org/1999/xhtml', xmlns:fb='https://www.face
           li
             a(href="#") contact
     .contact-container
-      p Contact Claudio
-      form(action='/new_inquiry', method='post', id='contact-form')
-        input(name="inquiry_name", id='inquiry_name', type='text', placeholder='Name')
-        input(name="inquiry_email", id='inquiry_email', type='text', placeholder='Email')
-        textarea(name="inquiry_message", id='inquiry_message', type='text', placeholder='Message')
-        input(id='submit-inquiry', type='submit', value='Send')
+      p Contact Claudio              
+      form(name="sendInquiryForm", ng-controller="clInquiriesCtrl")
+        
+        input(name="sender_name", id="sender_name", ng-model="sender_name", type="text", placeholder="Name")
+        
+        input(name="sender_email", id="sender_email", ng-model="sender_email", type="text", placeholder="Email")
+        
+        textarea(name="sender_message", id="sender_message", ng-model="sender_message", type="text", placeholder="Message")
+        
+        button(id="submit-inquiry", type="submit", ng-click="createInquiry()", ng-disabled="sendInquiryForm.$invalid") Send
+        
+        {{sender_name}}
+        {{sender_email}}
+        {{sender_message}}
+                
     section.content(ng-controller="mainCtrl")
       section.container
         block main-content

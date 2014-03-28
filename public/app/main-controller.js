@@ -12,7 +12,7 @@ angular.module('app').controller('mainCtrl', function ($scope, clIdentity, clAut
             $location.path('/admin');
         })
     }
-
+    
     $scope.slides = [
       '/img/web-limon-01.jpg',
       '/img/web-limon-02.jpg',
