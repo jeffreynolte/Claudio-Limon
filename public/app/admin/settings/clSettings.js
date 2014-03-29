@@ -1,10 +1,9 @@
 angular.module('app').factory('clSettings', function ($q, clSettingsData ) {
   return {
-    updateWork: function (newSettingsData) {
-      var newSettings = new clSettingsData(newSettingsData);
+    updateSettings: function (newSettingsData) {
+      var newSettings = new clSettingsData(newSettingsData);      
       var dfd = $q.defer();
-      newSettings.$update().then(function () {
-        console.log("updated settings");
+      newSettings.$update().then(function () {        
         dfd.resolve();
       }, function (response) {
         dfd.reject(response.data.reason);

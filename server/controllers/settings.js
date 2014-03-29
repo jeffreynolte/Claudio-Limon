@@ -24,7 +24,6 @@ exports.updateSettings = function(req, res) {
         reason: err.toString()
       })
     }
-    console.log('The number of updated documents was %d', numberAffected);
-    console.log('The raw response from Mongo was ', raw);
+    res.send(req.settings);
   }) 
 }

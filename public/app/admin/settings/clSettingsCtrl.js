@@ -9,20 +9,21 @@ angular.module('app').controller('clSettingsCtrl', function($scope, clSettingsDa
   $scope.updateSettings = function () {
 
     var newSettingsData = {
-      page_title: $scope.page_title,
-      page_subtitle: $scope.page_subtitle,
-      twitter_url: $scope.twitter_url,
-      facebook_url: $scope.facebook_url,
-      global_email: $scope.global_email,
-      description: $scope.description    
+      page_title: $scope.settings.page_title,
+      page_subtitle: $scope.settings.page_subtitle,
+      twitter_url: $scope.settings.twitter_url,
+      facebook_url: $scope.settings.facebook_url,
+      global_email: $scope.settings.global_email,
+      description: $scope.settings.description    
     };
-      
+          
     clSettings.updateSettings(newSettingsData).then(function () {
+      console.log("new settings data");
+      console.log("settings updated");
       clNotifier.notify("Your settings have been updated");
     }, function (reason) {
+      console.log("settings not updated");
       clNotifier.error(reason);
     })
-  }
-  
+  }  
 });
-
