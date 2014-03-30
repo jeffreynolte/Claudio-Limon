@@ -1,4 +1,4 @@
-angular.module('app').controller('clWorkCtrl', function($scope, $location, clWork, clWorkData, clNotifier){
+angular.module('app').controller('clWorkCtrl', function($scope, $location, clWork, clWorkData, clNotifier, $routeParams){
 
   // get all works
   $scope.works = clWorkData.query();
@@ -12,6 +12,7 @@ angular.module('app').controller('clWorkCtrl', function($scope, $location, clWor
         },
         function(images){
           $scope.$apply(function(){
+            console.log(images);
             $scope.handleImagesAdded(images);
           });
         },
@@ -22,7 +23,11 @@ angular.module('app').controller('clWorkCtrl', function($scope, $location, clWor
   };
 
   $scope.handleImagesAdded = function (images) {
+    _(images).forEach(function(image){
+      image['order'] = 0;
+    })      
     $scope.images = images;
+    console.log($scope.images);
   };
   
   $scope.removeImage = function(image){ 
@@ -44,6 +49,8 @@ angular.module('app').controller('clWorkCtrl', function($scope, $location, clWor
       images: $scope.images,
       categories: $scope.categories
     };
+    
+    console.log(newWorkData);
       
     clWork.createWork(newWorkData).then(function(){
       clNotifier.notify("Work created");
@@ -53,11 +60,27 @@ angular.module('app').controller('clWorkCtrl', function($scope, $location, clWor
     })
                         
   }
+  
+  
+  if($routeParams.workId){
+    clWorkData.get({_id: $routeParams.workId }).$promise.then(function (work) {
+      console.log(work);
+      $scope.title = work.title;
+      $scope.subtitle = work.subtitle;
+      $scope.isPublic = work.isPublic;
+      $scope.description = work.description;
+      $scope.images = work.images;
+      $scope.categories = work.categories;
+
+      console.log($scope.work);
     
-  // update work
+    });        
+  }
+        
   $scope.updateWork = function () {
 
     var newWorkData = {
+      _id: $routeParams.workId,
       title: $scope.title,
       subtitle: $scope.subtitle,
       isPublic: $scope.isPublic,
@@ -65,8 +88,10 @@ angular.module('app').controller('clWorkCtrl', function($scope, $location, clWor
       images: $scope.images,
       categories: $scope.categories
     };
+    
+    console.log(newWorkData);
       
-    clAuth.updateWork(newWorkData).then(function () {
+    clWork.updateWork(newWorkData).then(function () {      
       clNotifier.notify("Your work has been updated");
       $location.path('/admin/works');
     }, function (reason) {

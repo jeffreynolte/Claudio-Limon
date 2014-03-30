@@ -54,7 +54,8 @@ module.exports = function(config){
     updated: {type: Date, default: Date.now},
     images: [{
       url: String,
-      filename: String
+      filename: String,
+      order: Number
     }],
     categories: []
   });

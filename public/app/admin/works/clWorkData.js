@@ -3,6 +3,6 @@ angular.module('app').factory('clWorkData', function ($resource) {
       update : {method: 'PUT', isArray: false},
       delete_work: {method: 'DELETE'}
   });
-  
+    
   return WorkResource;
 })

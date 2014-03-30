@@ -22,8 +22,12 @@ form(name="createWorkForm")
     ul
       li(ng-repeat="image in images")
         img(ng-src="{{image.url}}/convert?w=100&amp;h=100&amp;fit=scale", alt="{{image.filename}}")
-        input(type="hidden", name="images[{{$index}}][{{image.url}}]", value="{{image.filename}}")
-        input(type="hidden", name="images[{{}}][{{image.url}}]", value="{{image.url}}")
+        input(type="text", name="images[{{$index}}][order]", ng-model="images[{{$index}}].order" class="img-order")
+        input(type="hidden", name="images[{{$index}}][{{image.filename}}]", value="{{image.filename}}")
+        input(type="hidden", name="images[{{$index}}][{{image.url}}]", value="{{image.url}}")
+        p Filename: {{image.filename}}
+        p Image Order: {{image.image_order}}
+        p Image Url: {{image.url}}
         a(href="#", ng-click="removeImage(image)") -
 
   .form-group

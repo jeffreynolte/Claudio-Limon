@@ -59,23 +59,6 @@ angular.module('app').controller('clUserEditUserCtrl', function ($scope, clUser,
     }, function (reason) {
       clNotifier.error(reason);
     })
-
-    // clAuth.deleteUser({_id: deleteUserData._id }, function(){
-    //   var deleteUserConfirm = confirm("Are you sure you would like to delete" + $scope.fname );
-    //   if(!deleteUserConfirm) return;
-    // 
-    //   clNotifier.notify("User has been deleted");
-    //   $location.path('/admin/users');
-    // })    
-    
-    
-    // clUser.delete({_id: deleteUserData._id }, function(){
-    //   var deleteUserConfirm = confirm("Are you sure you would like to delete" + $scope.fname );
-    //   if(!deleteUserConfirm) return;
-    // 
-    //   clNotifier.notify("User has been deleted");
-    //   $location.path('/admin/users');
-    // })
       
 
   }

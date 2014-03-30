@@ -42,3 +42,13 @@ body.admin {
   color: #fff;
   text-align: center;
 }
+.form-group.images li.ng-scope .img-order {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: 28px;
+  bottom: 5px;
+  color: #555;
+  text-align: center;
+  background: #eee;
+}

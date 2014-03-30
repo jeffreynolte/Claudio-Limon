@@ -35,9 +35,9 @@ exports.createWork = function(req, res, next) {
 
 exports.updateWork = function(req, res) {
   var workUpdates = req.body;
-
-  Work.findById(workUpdates._id, function(err, user) {
-        
+  
+  Work.findById(workUpdates._id, function(err, work) {
+            
     work.title = workUpdates.title;
     work.subtitle = workUpdates.subtitle;
     work.isPublic = workUpdates.isPublic;

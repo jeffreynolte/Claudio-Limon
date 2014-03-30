@@ -32,7 +32,7 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
         .when('/admin/works/create', {templateUrl: '/partials/admin/works/create',
             controller: 'clWorkCtrl', resolve: routeRoleChecks.admin
         })
-        .when('/admin/works/edit/:userId', {templateUrl: '/partials/admin/works/edit',
+        .when('/admin/works/edit/:workId', {templateUrl: '/partials/admin/works/edit',
             controller: 'clWorkCtrl', resolve: routeRoleChecks.admin
         })
         .when('/admin/settings', {templateUrl: '/partials/admin/settings',
