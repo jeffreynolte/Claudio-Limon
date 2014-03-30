@@ -18,4 +18,4 @@ node_modules
 
 public/vendor
 
-server/config/secrets.js
+/server/config/secrets.js
