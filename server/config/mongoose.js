@@ -94,7 +94,7 @@ module.exports = function(config){
     updated: {type: Date, default: Date.now},
   });
   
-  var Inquiries = mongoose.model('Inquiries', settingsSchema);    
+  var Inquiries = mongoose.model('Inquiries', inquiriesSchema);    
   
 
     

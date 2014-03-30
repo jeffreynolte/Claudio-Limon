@@ -1,5 +1,5 @@
 .row
-  .col-md-6
+  .col-md-12
     h2 Inquiries
     table.table.table-bordered.table-striped.pull-left
       thead
@@ -14,4 +14,5 @@
           td {{inquiry.sender_email}}
           td {{inquiry.sender_message}}
           td {{inquiry.updated | date:'MM/dd/yyyy @ h:mma'}}
-            a(href="/admin/users/works/{{work._id}}") Delete 
+          td
+            a(href="#", ng-click="deleteInquiry(inquiry._id)") Delete 

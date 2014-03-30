@@ -30,7 +30,7 @@ module.exports = function (app) {
   
   // inquiries api
   app.get('/api/inquiries', auth.requiresRole('admin'), inquiries.getInquiries);
-  app.post('/api/inquiries', auth.requiresRole('admin'), inquiries.createInquiry);
+  app.post('/api/inquiries', inquiries.createInquiry);
   app.delete('/api/inquiries', auth.requiresRole('admin'), inquiries.deleteInquiry);
   
   app.get('/partials/*', function(req, res){

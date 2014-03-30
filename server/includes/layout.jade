@@ -59,11 +59,7 @@ html(lang='en', xmlns='http://www.w3.org/1999/xhtml', xmlns:fb='https://www.face
           textarea(name="sender_message", id="sender_message", ng-model="sender_message", type="text", placeholder="Message")
 
           button(id="submit-inquiry", type="submit", ng-click="createInquiry()", ng-disabled="sendInquiryForm.$invalid") Send
-
-          {{sender_name}}
-          {{sender_email}}
-          {{sender_message}}
-
+          
     section.content(ng-controller="mainCtrl")
       section.container
         block main-content

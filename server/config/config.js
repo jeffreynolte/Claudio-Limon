@@ -1,5 +1,10 @@
 var path = require('path');
 var rootPath = path.normalize(__dirname + '/../../');
+var secrets = require('./secrets');
+
+
+
+console.log(secrets)
 
 module.exports = {
   development: {
@@ -8,8 +13,15 @@ module.exports = {
     port: process.env.PORT || 3000
   },
   production: {
-    db: 'mongodb://jeffreynolte:m0x13p4ss!@ds033059.mongolab.com:33059/climon_prod',
+    db: secrets.db.production,
     rootPath: rootPath,
     port: process.env.PORT || 80
-  } 
+  },
+  mailer: {
+    auth: {
+      user: secrets.gmail.user_name,
+      pass: secrets.gmail.password
+    },
+    defaultFromAddress: "Claudio Limon <mail@claudiolimon.com.mx>"
+  }
 }

@@ -1,2 +1,3 @@
 TODO
 - Add Edit template for work.
+- Styling for the wysiwyg editor, some bugs in element view.

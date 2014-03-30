@@ -1,22 +1,23 @@
-h2 Update Settings
-form(name="settingsForm")
-  .form-group
-    label(for='page_title') Page Title
-    input.form-control(type='text', name="page_title", ng-model="settings.page_title")
-  .form-group
-    label(for='page_subtitle') Page SubTitle
-    input.form-control(type='text', name="page_subtitle", ng-model="settings.page_subtitle")
-  .form-group
-    label(for='twitter_url') Twitter Url
-    input.form-control(type='text', name="twitter_url", ng-model="settings.twitter_url")
-  .form-group
-    label(for='facebook_url') Facebook Url
-    input.form-control(type='text', name="facebook_url", ng-model="settings.facebook_url")
-  .form-group
-    label(for='global_email') Email Address
-    input.form-control(type='text', name="global_email", ng-model="settings.global_email")
-  .form-group
-    label(for='description') Description
-    text-angular(type='text', name="description", ng-model="settings.description")
-  .form-group
-      button.btn.btn-primary(ng-click="updateSettings()") Update Settings
+div.col-md-6
+  h2 Update Settings
+  form(name="settingsForm")
+    .form-group
+      label(for='page_title') Page Title
+      input.form-control(type='text', name="page_title", ng-model="settings.page_title")
+    .form-group
+      label(for='page_subtitle') Page SubTitle
+      input.form-control(type='text', name="page_subtitle", ng-model="settings.page_subtitle")
+    .form-group
+      label(for='twitter_url') Twitter Url
+      input.form-control(type='text', name="twitter_url", ng-model="settings.twitter_url")
+    .form-group
+      label(for='facebook_url') Facebook Url
+      input.form-control(type='text', name="facebook_url", ng-model="settings.facebook_url")
+    .form-group
+      label(for='global_email') Email Address
+      input.form-control(type='text', name="global_email", ng-model="settings.global_email")
+    .form-group
+      label(for='description') Description
+      text-angular(type='text', name="description", ng-model="settings.description")
+    .form-group
+        button.btn.btn-primary(ng-click="updateSettings()") Update Settings

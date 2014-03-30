@@ -1,6 +1,7 @@
 var User = require('mongoose').model('User'),
-  encrypt = require('../utilities/encryption');
-
+  encrypt = require('../utilities/encryption'),
+  mailer = require('../utilities/mailer');
+  
 exports.getUsers = function(req, res) {
   //get user id as param
   var userId = req.query._id;
@@ -23,7 +24,7 @@ exports.getUsers = function(req, res) {
 exports.createUser = function(req, res, next) {
   var userData = req.body;
   userData.salt = encrypt.createSalt();
-  userData.hashed_pwd = encrypt.hashPwd(userData.salt, userData.password);
+  userData.hashed_pwd = encrypt.hashPwd(userData.salt, userData.password);    
   User.create(userData, function(err, user) {
     if (err) {
       if (err.toString().indexOf('E11000') > -1) {
@@ -34,6 +35,19 @@ exports.createUser = function(req, res, next) {
         reason: err.toString()
       });
     }
+          
+    mailer.mailDefaults.to = userData.email;  
+    mailer.mailDefaults.html = "Hi! your account has been created<br/> Username: " + userData.userName + "<br/>Password: " + userData.password;  
+
+    mailer.smtpTransport.sendMail(mailer.mailDefaults, function(error, response){
+        if(error){
+            console.log(error);
+        }else{
+            console.log("Message sent: " + response.message);
+        }
+        mailer.smtpTransport.close();
+    });
+        
     res.send({
       user_created: "true"
     });
