@@ -13,6 +13,10 @@ form(name="createWorkForm")
       input(type="checkbox", name="isPublic", ng-model="isPublic")
 
   .form-group
+    span Featured ?
+      input(type="checkbox", name="isFeatured", ng-model="isFeatured")
+
+  .form-group
     label(for='description') Description
     textarea#description.form-control(type='text', name="description", ng-model="description", placeholder="Description")
 
@@ -24,7 +28,7 @@ form(name="createWorkForm")
         img(ng-src="{{image.url}}/convert?w=100&amp;h=100&amp;fit=scale", alt="{{image.filename}}")
         input(type="text", name="images[{{$index}}][order]", ng-model="images[{{$index}}].order" class="img-order")
         input(type="hidden", name="images[{{$index}}][{{image.filename}}]", value="{{image.filename}}")
-        input(type="hidden", name="images[{{$index}}][{{image.url}}]", value="{{image.url}}")
+        input(type="text", name="images[{{$index}}][order]", ng-model="image.order" class="img-order")
         p Filename: {{image.filename}}
         p Image Order: {{image.image_order}}
         p Image Url: {{image.url}}
