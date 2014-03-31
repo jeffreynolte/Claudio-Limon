@@ -303,3 +303,8 @@ body.public .navigation .social .behance {
 .flexslider .flex-control-nav li .flex-active {
   background: #fff;
 }
+button {
+  background: #000;
+  border: none;
+  color: #fff;
+}

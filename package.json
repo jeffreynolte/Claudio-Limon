@@ -18,7 +18,8 @@
     "stylus": "~0.42.2",
     "mongoose": "~3.8.0",
     "passport": "~0.2.0",
-    "passport-local": "~0.1.6"
+    "passport-local": "~0.1.6",
+    "nodemailer": "~0.6.1"
   },
   "devDependencies": {
     "karma-mocha": "~0.1.1",
