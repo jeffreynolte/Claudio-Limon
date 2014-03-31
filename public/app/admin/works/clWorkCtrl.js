@@ -27,7 +27,6 @@ angular.module('app').controller('clWorkCtrl', function($scope, $location, clWor
       image['order'] = 0;
     })      
     $scope.images = images;
-    console.log($scope.images);
   };
   
   $scope.removeImage = function(image){ 

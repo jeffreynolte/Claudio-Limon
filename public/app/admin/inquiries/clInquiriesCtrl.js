@@ -25,12 +25,11 @@ angular.module('app').controller('clInquiriesCtrl', function($scope, $location, 
       sender_message: $scope.sender_message,
       updated: Date.now()
     };
-
+        
     clInquiries.createInquiry(newInquiryData).then(function(){
-      console.log("inquiry sent");
+      alert("Your message has been sent!");
     }, function(reason){
-      console.log("error");
-      console.log(reason);
+      alert("There has been an error:" + reason);
     })
   }
 

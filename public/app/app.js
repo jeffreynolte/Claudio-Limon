@@ -54,10 +54,7 @@ angular.module('app').run(function ($rootScope, $location) {
 angular.module('app').controller('mainCtrl', function ($scope, clIdentity, clAuth, clNotifier, $location) {
     $scope.identity = clIdentity;
     $scope.myVar = "Hello Angular World";
-    
-    
-    
-
+            
     $scope.signout = function () {
         clAuth.logoutUser().then(function () {
             $scope.username = "";

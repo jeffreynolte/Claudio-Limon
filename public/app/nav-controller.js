@@ -5,5 +5,5 @@ angular.module('app').controller('navCtrl', function ($scope) {
 
   $scope.toggleContact = function() {
     $scope.hideContact = !$scope.hideContact;
-  };
+  };  
 });

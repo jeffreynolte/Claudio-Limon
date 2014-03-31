@@ -26,37 +26,38 @@ html(lang='en', xmlns='http://www.w3.org/1999/xhtml', xmlns:fb='https://www.face
   //if lt IE 9
     script(src='http://html5shim.googlecode.com/svn/trunk/html5.js')
   body.public(ng-app="app")
-    div.navigation(ng-controller='navCtrl')
-      h1 Claudio Limon
-      nav.social
-        ul
-          li.facebook
-            a(href="#", title="Facebook") f
-          li.twitter
-            a(href="#", title="Twitter") t
-          li.behance
-            a(href="#", title="Behance") be
-      nav
-        ul
-          li
-            a(href="/") home
-          li
-            a(href="/work") work
-          li
-            a(href="#") blog
-          li
-            a(href="/about") about
-          li
-            a(href ng-click='toggleContact()') contact
+    div.navigationwrap(ng-controller='navCtrl') 
+      div.navigation
+        h1 Claudio Limon
+        nav.social
+          ul
+            li.facebook
+              a(href="#", title="Facebook") f
+            li.twitter
+              a(href="#", title="Twitter") t
+            li.behance
+              a(href="#", title="Behance") be
+        nav
+          ul
+            li
+              a(href="/") home
+            li
+              a(href="/work") work
+            li
+              a(href="#") blog
+            li
+              a(href="/about") about
+            li
+              a(href ng-click='toggleContact()') contact
       .contact-container(ng-hide='hideContact')
         p Contact Claudio
         form(name="sendInquiryForm", ng-controller='clInquiriesCtrl')
+          span.alert {{messaging}}
+          input(name="sender_name", id="sender_name", ng-model="sender_name", type="text", placeholder="* Name", required)
 
-          input(name="sender_name", id="sender_name", ng-model="sender_name", type="text", placeholder="Name")
+          input(name="sender_email", id="sender_email", ng-model="sender_email", type="text", placeholder="* Email", required)
 
-          input(name="sender_email", id="sender_email", ng-model="sender_email", type="text", placeholder="Email")
-
-          textarea(name="sender_message", id="sender_message", ng-model="sender_message", type="text", placeholder="Message")
+          textarea(name="sender_message", id="sender_message", ng-model="sender_message", type="text", placeholder="* Message", required)
 
           button(id="submit-inquiry", type="submit", ng-click="createInquiry()", ng-disabled="sendInquiryForm.$invalid") Send
           
