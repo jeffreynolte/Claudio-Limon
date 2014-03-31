@@ -1,3 +1,13 @@
 TODO
 - Add Edit template for work.
 - Styling for the wysiwyg editor, some bugs in element view.
+- Link logo to home page
+- Connect the categories on the home page with specific urls for work
+- Implement the settings into the respective places (links, emaill, about, etc)
+- Clean up the styling and functionality of the wysiwyg editor on the settings page
+- Implement animations on the work detail page (only info should show.  clicking info will bring up all work details (description, etc))
+- Typography needs adjustment site wide
+- Logo needs replacement with image
+
+Pre launch TODO
+- Implement indexing for public portion of the site

@@ -12,6 +12,10 @@ body.public a {
   color: #fff;
   text-decoration: none;
 }
+body.public a:hover{
+  color:#ddd;
+}
+
 body.public .navigation {
   width: 100%;
   height: auto;
@@ -135,7 +139,7 @@ body.public .navigation .contact-container.ng-hide {
 }
 .info {
   position: absolute;
-  top: 420px;
+  top: 40%;
   z-index: 999;
   width: 100%;
   text-align: center;
@@ -157,7 +161,7 @@ body.public .navigation .contact-container.ng-hide {
 .home-links {
   position: absolute;
   z-index: 999;
-  bottom: 100px;
+  bottom: 30px;
   width: 100%;
   text-align: center;
 }
