@@ -24,7 +24,8 @@
     "textAngular": "~1.2.0",
     "flexslider": "*",
     "angular-flexslider": "~1.0.0",
-    "angular-animate": "~1.2.15"
+    "angular-animate": "~1.2.15",
+    "lodash": "~2.4.1"
   },
   "resolutions": {
     "angular": "~1.2.13",
