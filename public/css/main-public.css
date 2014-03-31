@@ -66,6 +66,73 @@ body.public .navigation .social .behance {
   text-transform: capitalize;
   text-indent: 2px;
 }
+body.public .navigation .contact-container {
+  position: absolute;
+  right: 0;
+  top: 46px;
+  width: 290px;
+  height: 372px;
+  z-index: 1000;
+  background: #fff;
+  padding-left: 20px;
+  opacity: 1;
+}
+body.public .navigation .contact-container p {
+  color: #9c9f9e;
+}
+body.public .navigation .contact-container .social {
+  margin: 0;
+  display: inline-block;
+  float: right;
+  position: relative;
+  bottom: 30px;
+  right: 20px;
+}
+body.public .navigation .contact-container .social ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+body.public .navigation .contact-container .social ul li {
+  display: inline-block;
+}
+body.public .navigation .contact-container .social ul li a {
+  padding: 4px;
+  background: #000 !important;
+  font-size: 18px;
+  color: #fff !important;
+}
+body.public .navigation .contact-container input {
+  width: 250px;
+  margin-bottom: 18px;
+  background: #e2e4e3;
+  border: none;
+  padding: 8px;
+}
+body.public .navigation .contact-container button {
+  height: 28px;
+  width: 59px;
+  font-size: 14px;
+}
+body.public .navigation .contact-container textarea {
+  width: 250px;
+  margin-bottom: 18px;
+  background: #e2e4e3;
+  border: none;
+  padding: 8px;
+  height: 135px;
+  resize: none;
+}
+body.public .navigation .contact-container.ng-hide-add,
+body.public .navigation .contact-container.ng-hide-remove {
+  transition: 0.5s linear all;
+  -webkit-transition: 0.5s linear all;
+  display: block !important;
+}
+body.public .navigation .contact-container.ng-hide {
+  opacity: 0;
+  top: -600px;
+}
 .info {
   position: absolute;
   top: 420px;
@@ -234,46 +301,6 @@ body.public .navigation .social .behance {
 .work-content .work-block figcaption h4 {
   margin: 0;
   font-size: 12px;
-}
-.contact-container {
-  position: absolute;
-  right: 0;
-  top: 46px;
-  width: 290px;
-  height: 372px;
-  z-index: 1000;
-  background: #fff;
-  padding-left: 20px;
-  opacity: 1;
-}
-.contact-container p {
-  color: #9c9f9e;
-}
-.contact-container input {
-  width: 250px;
-  margin-bottom: 18px;
-  background: #e2e4e3;
-  border: none;
-  padding: 8px;
-}
-.contact-container textarea {
-  width: 250px;
-  margin-bottom: 18px;
-  background: #e2e4e3;
-  border: none;
-  padding: 8px;
-  height: 135px;
-  resize: none;
-}
-.contact-container.ng-hide-add,
-.contact-container.ng-hide-remove {
-  transition: 0.5s linear all;
-  -webkit-transition: 0.5s linear all;
-  display: block !important;
-}
-.contact-container.ng-hide {
-  opacity: 0;
-  top: -600px;
 }
 .flexslider {
   margin: 0;

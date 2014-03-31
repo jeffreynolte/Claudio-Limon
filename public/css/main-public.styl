@@ -55,6 +55,66 @@ body.public
       .behance
         text-transform:capitalize;
         text-indent:2px;
+    .contact-container
+      position: absolute;
+      right: 0;
+      top: 46px;
+      width: 290px;
+      height: 372px;
+      z-index: 1000;
+      background: #FFFFFF;
+      padding-left: 20px;
+      opacity: 1;
+      p
+        color: #9C9F9E;
+
+      .social
+        margin: 0;
+        display: inline-block;
+        float: right;
+        position: relative;
+        bottom: 30px;
+        right: 20px;
+        ul
+          padding: 0;
+          margin: 0;
+          list-style-type: none;
+          li
+            display: inline-block;
+            a
+              padding: 4px;
+              background: black !important;
+              font-size: 18px;
+              color: white !important;
+
+      input
+        width: 250px;
+        margin-bottom: 18px;
+        background: #E2E4E3;
+        border:none;
+        padding: 8px;
+
+      button
+        height: 28px;
+        width: 59px;
+        font-size: 14px;
+
+      textarea
+        width: 250px;
+        margin-bottom: 18px;
+        background: #E2E4E3;
+        border:none;
+        padding: 8px;
+        height: 135px;
+        resize: none;
+      &.ng-hide-add,
+      &.ng-hide-remove
+        transition: 0.5s linear all;
+        -webkit-transition: 0.5s linear all;
+        display: block !important;
+      &.ng-hide
+        opacity: 0;
+        top: -600px;
 
 .info
   position: absolute;
@@ -212,50 +272,6 @@ body.public
       h4
         margin: 0;
         font-size: 12px;
-
-
-
-.contact-container
-  position: absolute;
-  right: 0;
-  top: 46px;
-  width: 290px;
-  height: 372px;
-  z-index: 1000;
-  background: #FFFFFF;
-  padding-left: 20px;
-  opacity: 1;
-  p
-    color: #9C9F9E;
-
-  input
-    width: 250px;
-    margin-bottom: 18px;
-    background: #E2E4E3;
-    border:none;
-    padding: 8px;
-
-  button
-    height: 28px;
-    width: 59px;
-    font-size: 14px;
-
-  textarea
-    width: 250px;
-    margin-bottom: 18px;
-    background: #E2E4E3;
-    border:none;
-    padding: 8px;
-    height: 135px;
-    resize: none;
-  &.ng-hide-add,
-  &.ng-hide-remove
-    transition: 0.5s linear all;
-    -webkit-transition: 0.5s linear all;
-    display: block !important;
-  &.ng-hide
-    opacity: 0;
-    top: -600px;
 
 .flexslider
   margin:0;
