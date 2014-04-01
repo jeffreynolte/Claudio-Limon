@@ -241,6 +241,7 @@ body.public .navigation .contact-container.ng-hide {
   width: 100%;
   float: left;
   padding: 15px 15px;
+  cursor: pointer;
 }
 .detail-content .detail-content-box header h3 {
   float: left;
@@ -267,13 +268,24 @@ body.public .navigation .contact-container.ng-hide {
   background: rgba(0,0,0,0.8);
   padding: 20px 15px;
   float: left;
+  width: 100%;
 }
 .detail-content .detail-content-box .detail-content-text p {
+  line-height: 20px;
   margin-bottom: 15px;
 }
 .detail-content .detail-content-box .detail-content-text q {
   margin-bottom: 15px;
   display: block;
+}
+.detail-content .detail-content-box .detail-content-text.ng-hide-add,
+.detail-content .detail-content-box .detail-content-text.ng-hide-remove {
+  transition: 0.5s linear all;
+  -webkit-transition: 0.5s linear all;
+  display: block !important;
+}
+.detail-content .detail-content-box .detail-content-text.ng-hide {
+  opacity: 0;
 }
 .work-content {
   z-index: 999;

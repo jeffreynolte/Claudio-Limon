@@ -4,12 +4,13 @@ html(lang='en')
     title Claudio Limon Admin
     link(href="/favicon.ico", rel="shortcut icon", type="image/x-icon")
     link(rel="stylesheet", href="/vendor/bootstrap/dist/css/bootstrap.css")
+    link(rel="stylesheet", href="/vendor/font-awesome/css/font-awesome.css")
     link(rel="stylesheet", href="/vendor/toastr/toastr.css")
     link(rel="stylesheet", href="/css/main.css")
   body.admin(ng-app="app")
     include currentUser
     div.navbar.navbar-fixed-top.navbar-inverse(ng-controller="mainCtrl", ng-show="identity.isAuthenticated()")
-      nav.collapse.navbar-collapse.bs-navbar-collapse(role="navigation")  
+      nav.collapse.navbar-collapse.bs-navbar-collapse(role="navigation")
         ul.nav.navbar-nav
           li
             a.brand(href="/admin") Claudio Limon Admin
@@ -24,10 +25,10 @@ html(lang='en')
         ul.nav.navbar-nav.navbar-right
           li.dropdown
             a.dropdown-toggle(href="#", data-toggle="dropdown") {{ identity.currentUser.firstName + " " + identity.currentUser.lastName}}
-              b.caret 
+              b.caret
             ul.dropdown-menu
-              li 
-                a(href="/admin/signout", ng-click="signout()") Signout     
+              li
+                a(href="/admin/signout", ng-click="signout()") Signout
     section.content
       section.container
         block main-content

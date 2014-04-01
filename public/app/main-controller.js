@@ -2,10 +2,10 @@
 
 angular.module('app').controller('mainCtrl', function ($scope, clIdentity, clAuth, clNotifier, $location) {
     $scope.identity = clIdentity;
-    $scope.showContact = false;
+    $scope.hideWorkInfo = true;
 
-    $scope.toggleContact = function() {
-      $scope.showContact = !$scope.showContact;
+    $scope.toggleWorkInfo = function() {
+      $scope.hideWorkInfo = !$scope.hideWorkInfo;
     };
 
     $scope.signout = function () {
@@ -26,4 +26,5 @@ angular.module('app').controller('mainCtrl', function ($scope, clIdentity, clAut
       '/img/web-limon-04.jpg',
       '/img/web-limon-05.jpg'
     ];
+
 });

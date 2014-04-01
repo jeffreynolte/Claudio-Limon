@@ -19,8 +19,8 @@ div.col-md-6
     .form-group
       label(for='global_email') Email Address
       input.form-control(type='text', name="global_email", ng-model="settings.global_email")
-    .form-group
+    .form-group-textAngular
       label(for='description') Description
-      text-angular(type='text', name="description", ng-model="settings.description")
+      text-angular(type='text', name="description", ng-model="settings.description", ta-toolbar="{{toolbarItems}}")
     .form-group
         button.btn.btn-primary(ng-click="updateSettings()") Update Settings
