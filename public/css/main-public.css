@@ -12,10 +12,6 @@ body.public a {
   color: #fff;
   text-decoration: none;
 }
-body.public a:hover{
-  color:#ddd;
-}
-
 body.public .navigation {
   width: 100%;
   height: auto;
