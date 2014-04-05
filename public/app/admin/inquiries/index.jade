@@ -1,6 +1,12 @@
 .row
   .col-md-12
     h2 Inquiries
+    form.navbar-form
+      .input-group.col-md-4.col-md-offset-8
+        input(type="text", ng-model="searchInquiries" class="form-control", placeholder="Filter", name="search-term", id="q")
+        .input-group-btn
+          button.btn.btn-default(type="submit")
+            i.glyphicon.glyphicon-search
     table.table.table-bordered.table-striped.pull-left
       thead
         tr  
@@ -9,7 +15,7 @@
           th Message
           th Date Sent
           th Delete
-        tr(ng-repeat="inquiry in inquiries")
+        tr(ng-repeat="inquiry in inquiries  | filter:searchInquiries")
           td {{inquiry.sender_name}}
           td {{inquiry.sender_email}}
           td {{inquiry.sender_message}}
