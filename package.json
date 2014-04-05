@@ -4,7 +4,6 @@
   "description": "Claudio Limon Website",
   "main": "index.js",
   "scripts": {
-    "postinstall": "./node_modules/bower/bin/bower install",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "engines": {

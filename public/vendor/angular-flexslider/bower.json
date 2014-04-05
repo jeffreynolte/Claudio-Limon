@@ -1,0 +1,18 @@
+{
+  "name": "angular-flexslider",
+  "version": "1.0.0",
+  "main": "./angular-flexslider.js",
+  "dependencies": {
+    "angular": "1.0.7",
+    "jquery": "2.0.2",
+    "flexslider": "a4647edaf7d44a32b1d568cef570128b8d28403b"
+  },
+  "readme": "angular-flexslider\n======================\n\nbower repo for angular-flexslider.js",
+  "readmeFilename": "README.md",
+  "_id": "angular-flexslider@1.0.0",
+  "description": "bower-angular-flexslider ======================",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/EnthusiasticCode/angular-flexslider.git"
+  }
+}
