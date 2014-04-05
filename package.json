@@ -4,6 +4,7 @@
   "description": "Claudio Limon Website",
   "main": "index.js",
   "scripts": {
+    "postinstall": "./node_modules/bower/bin/bower install",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "engines": {
@@ -19,7 +20,8 @@
     "mongoose": "~3.8.0",
     "passport": "~0.2.0",
     "passport-local": "~0.1.6",
-    "nodemailer": "~0.6.1"
+    "nodemailer": "~0.6.1",
+    "bower": "~1.3.1"
   },
   "devDependencies": {
     "karma-mocha": "~0.1.1",
