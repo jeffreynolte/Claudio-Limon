@@ -9,7 +9,7 @@ module.exports = {
     port: process.env.PORT || 3000
   },
   production: {
-    db: process.env.DB || secrets.production.db,
+    db: process.env.DB_URL || secrets.production.db,
     rootPath: rootPath,
     port: process.env.PORT || 80
   },
