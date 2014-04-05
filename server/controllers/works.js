@@ -60,10 +60,10 @@ exports.updateWork = function(req, res) {
 }
 
 exports.deleteWork = function(req, res) {
-
+  
   Work.remove({
     _id: req.query._id
-  }, function(err, user) {
+  }, function(err, work) {
     if (err) {
       res.status(400);
       return res.send({

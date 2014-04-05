@@ -1,22 +1,15 @@
 .about-content
-  p
-    | #{content}
-  p
-    | #{content}
-  p
-    | #{content}
-  p
-    | #{content}
+  p {{settings.description}}
   nav.social
     ul
       li.email
-        a(href="mailto:#{emailAddress}", title="email") email me
+        a(href="mailto:{{settings.global_email}}", title="email") email me
       li.facebook
-        a(href="#{facebookLink}", title="Facebook") f
+        a(href="{{settings.facebook_url}}", title="Facebook") f
       li.twitter
-        a(href="#{twitterLink}", title="Twitter") t
+        a(href="{{settings.twitter_url}}", title="Twitter") t
       li.behance
-        a(href="#{behanceLink}", title="Behance") be
+        a(href="{{settings.behance_url}}", title="Behance") be
 flex-slider(slide="s in aboutSlides" animation="slide")
   li
     img(ng-src="{{s}}")

@@ -39,18 +39,18 @@ angular.module('app').controller('clWorkCtrl', function($scope, $location, clWor
       
   // create work
   $scope.createWork = function(){
-      
+          
     var newWorkData = {
       title: $scope.title,
       subtitle: $scope.subtitle,
+      quote: $scope.quote,
       isPublic: $scope.isPublic,
+      isFeatured: $scope.isFeatured,
       description: $scope.description,
       images: $scope.images,
       categories: $scope.categories
     };
-    
-    console.log(newWorkData);
-      
+          
     clWork.createWork(newWorkData).then(function(){
       clNotifier.notify("Work created");
       $location.path('/admin/works');
@@ -63,26 +63,28 @@ angular.module('app').controller('clWorkCtrl', function($scope, $location, clWor
   
   if($routeParams.workId){
     clWorkData.get({_id: $routeParams.workId }).$promise.then(function (work) {
-      console.log(work);
+      
       $scope.title = work.title;
       $scope.subtitle = work.subtitle;
+      $scope.quote = work.quote;
       $scope.isPublic = work.isPublic;
+      $scope.isFeatured = work.isFeatured;
       $scope.description = work.description;
       $scope.images = work.images;
       $scope.categories = work.categories;
-
-      console.log($scope.work);
     
     });        
   }
         
   $scope.updateWork = function () {
-
+    
     var newWorkData = {
       _id: $routeParams.workId,
       title: $scope.title,
-      subtitle: $scope.subtitle,
+      subtitle: $scope.title,
+      quote: $scope.quote,
       isPublic: $scope.isPublic,
+      isFeatured: $scope.isFeatured,
       description: $scope.description,
       images: $scope.images,
       categories: $scope.categories
@@ -102,10 +104,10 @@ angular.module('app').controller('clWorkCtrl', function($scope, $location, clWor
   $scope.deleteWork = function () {
     
     var deleteWorkData = {
-      _id: $routeParams.userId
+      _id: $routeParams.workId
     };
     
-    clAuth.deleteWork(deleteWorkData).then(function () {
+    clWork.deleteWork(deleteWorkData).then(function () {
       clNotifier.notify("Work Deleted");
       $location.path('/admin/works');
     }, function (reason) {

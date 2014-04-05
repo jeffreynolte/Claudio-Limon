@@ -1,12 +1,25 @@
 'use strict';
 
-angular.module('app').controller('mainCtrl', function ($scope, clIdentity, clAuth, clNotifier, $location) {
+angular.module('app').controller('mainCtrl', function ($scope, clIdentity, clAuth, clNotifier, $location, $http) {
+  
+    $scope.hideContact = true;
+
     $scope.identity = clIdentity;
     $scope.hideWorkInfo = true;
 
     $scope.toggleWorkInfo = function() {
       $scope.hideWorkInfo = !$scope.hideWorkInfo;
     };
+    
+    $scope.toggleContact = function() {
+      $scope.hideContact = !$scope.hideContact;
+    };
+    
+    $http.get('/api/public/settings').success(function(data) {
+      $scope.settings = data[0];
+    }).error(function(data, status) {
+      console.warn('Error: ', status);
+    });
 
     $scope.signout = function () {
         clAuth.logoutUser().then(function () {

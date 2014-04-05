@@ -7,6 +7,10 @@ form(name="editWorkForm")
   .form-group
     label(for='subtitle') Subtitle
     input#subtitle.form-control(type='text', name="subtitle", ng-model="subtitle", placeholder="SubTitle")
+  
+  .form-group
+    label(for='quote') Quote
+    input#subtitle.form-control(type='text', name="quote", ng-model="quote", placeholder="Quote")
 
   .form-group
     span Public ?
@@ -37,3 +41,4 @@ form(name="editWorkForm")
 
   .form-group
       button.btn.btn-primary(ng-click="updateWork()", ng-disabled="editWorkForm.$invalid") Update Work
+      button.btn.btn-primary.btn-danger(ng-click="deleteWork()") Delete Work

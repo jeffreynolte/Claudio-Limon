@@ -7,6 +7,10 @@ form(name="createWorkForm")
   .form-group
     label(for='subtitle') Subtitle
     input#subtitle.form-control(type='text', name="subtitle", ng-model="subtitle", placeholder="SubTitle")
+    
+  .form-group
+    label(for='quote') Quote
+    input#subtitle.form-control(type='text', name="quote", ng-model="quote", placeholder="Quote")  
 
   .form-group
     span Public ?
@@ -26,9 +30,10 @@ form(name="createWorkForm")
     ul
       li(ng-repeat="image in images")
         img(ng-src="{{image.url}}/convert?w=100&amp;h=100&amp;fit=scale", alt="{{image.filename}}")
-        input(type="text", name="images[{{$index}}][order]", ng-model="images[{{$index}}].order" class="img-order")
+        {{$index}}
+        //- input(type="text", name="images[{{$index}}][order]", ng-model="images[{{$index}}].order" class="img-order")
+        input(type="text" name="images[{{$index}}][{{image.order}}]",  value="{{image.order}}", class="img-order")        
         input(type="hidden", name="images[{{$index}}][{{image.filename}}]", value="{{image.filename}}")
-        input(type="text", name="images[{{$index}}][order]", ng-model="image.order" class="img-order")
         p Filename: {{image.filename}}
         p Image Order: {{image.image_order}}
         p Image Url: {{image.url}}

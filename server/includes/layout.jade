@@ -4,21 +4,12 @@ html(lang='en', xmlns='http://www.w3.org/1999/xhtml', xmlns:fb='https://www.face
   meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
   meta(name='viewport', content='width=device-width,initial-scale=1')
 
-  title= appName+' - '+title
+  title .: Claudio Limon :.
   meta(http-equiv='Content-type', content='text/html;charset=UTF-8')
-  meta(name="keywords", content="node.js, express, mongoose, mongodb, angularjs")
-  meta(name="description", content="MEAN - A Modern Stack: MongoDB, ExpressJS, AngularJS, NodeJS. (BONUS: Passport User Support).")
+  meta(name="keywords", content="")
+  meta(name="description", content="Claudio Limon - Mexican Artist")
 
   link(href='/img/icons/favicon.ico', rel='shortcut icon', type='image/x-icon')
-
-  meta(property='fb:app_id', content='APP_ID')
-  meta(property='og:title', content='')
-  meta(property='og:description', content='MEAN - A Modern Stack: MongoDB, ExpressJS, AngularJS, NodeJS. (BONUS: Passport User Support).')
-  meta(property='og:type', content='website')
-  meta(property='og:url', content='APP_URL')
-  meta(property='og:image', content='APP_LOGO')
-  meta(property='og:site_name', content='MEAN - A Modern Stack')
-  meta(property='fb:admins', content='APP_ADMIN')
   link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Asap:400,700,400italic,700italic', type='text/css')
   link(rel='stylesheet', href='/vendor/flexslider/flexslider.css')
   link(rel="stylesheet", href="/css/main-public.css")
@@ -26,34 +17,32 @@ html(lang='en', xmlns='http://www.w3.org/1999/xhtml', xmlns:fb='https://www.face
   //if lt IE 9
     script(src='http://html5shim.googlecode.com/svn/trunk/html5.js')
   body.public(ng-app="app")
-    div.navigationwrap(ng-controller='navCtrl')
-      div.navigation
-        h1
-          a(href='/') Claudio Limon
-        nav.social
-          ul
-            li.facebook
-              a(href="{{settings.facebook_url}}", title="Facebook") f
-            li.twitter
-              a(href="{{settings.twitter_url}}", title="Twitter") t
-            li.behance
-              a(href="{{settings.behance_url}}", title="Behance") be
-        nav
-          ul
-            li
-              a(href="/") home
-            li
-              a(href="/work") work
-            li
-              a(href="#") blog
-            li
-              a(href="/about") about
-            li
-              a(href ng-click='toggleContact()') contact
+    div.nav-wrapper
+      div.navigationwrap(ng-controller='mainCtrl')
+        div.navigation
+          h1
+            a(href='/') Claudio Limon
+          nav.social
+            ul
+              li.facebook
+                a(href="{{settings.facebook_url}}", title="Facebook") f
+              li.twitter
+                a(href="{{settings.twitter_url}}", title="Twitter") t
+              li.behance
+                a(href="{{settings.behance_url}}", title="Behance") be
+          nav
+            ul
+              li
+                a(href="/") home
+              li
+                a(href="/work") work
+              li
+                a(href="/about") about
+              li
+                a(href ng-click='toggleContact()') contact
         .contact-container(ng-hide='hideContact')
           p Contact Claudio
           form(name="sendInquiryForm", ng-controller='clInquiriesCtrl')
-            span.alert {{messaging}}
             input(name="sender_name", id="sender_name", ng-model="sender_name", type="text", placeholder="* Name", required)
 
             input(name="sender_email", id="sender_email", ng-model="sender_email", type="text", placeholder="* Email", required)

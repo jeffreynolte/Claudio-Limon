@@ -49,7 +49,9 @@ module.exports = function(config){
   var workSchema = mongoose.Schema({
     title: String,
     subtitle: String,
+    quote: String,
     isPublic: Boolean,
+    isFeatured: Boolean,
     description: String,
     updated: {type: Date, default: Date.now},
     images: [{
@@ -67,6 +69,7 @@ module.exports = function(config){
     page_subtitle: String,
     twitter_url: String,
     facebook_url: String,
+    behance_url: String,
     global_email: String,
     description: String,
     updated: {type: Date, default: Date.now},
@@ -80,14 +83,14 @@ module.exports = function(config){
         page_subtitle: "Artist &amp; Illustrator",
         twitter_url: 'http://twitter.com',
         facebook_url: "http://facebook.com",
+        behance_url: "http://behance.com",
         global_email: "claudio@claudiolimon.com",
         description: "Here is a sample page decription",
         updated: {type: Date, default: Date.now}        
       })
     }
   })
-  
-  
+    
   var inquiriesSchema = mongoose.Schema({
     sender_name: String,
     sender_email: String,

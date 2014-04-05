@@ -9,25 +9,34 @@ body.public
   a
     color:#fff;
     text-decoration: none;
+  .nav-wrapper
+    position: relative
+    height: 34px
   .navigation
     width:100%;
-    height:auto;
+    height:35px;
     background:#000;
     float:left;
-    padding:10px 0;
+    padding:0;
     position:fixed;
     z-index:9999;
     top:0;
     h1
-      float:left;
-      width:40%;
-      margin:0;
-      text-indent:20px;
-      font-size: 24px;
-      text-transform: uppercase;
+      margin:6px 0 0 10px
+      float:left
+      padding:0
+      a
+        display:block
+        text-indent:-9999px;
+        width:155px
+        height:20px
+        background: url("../img/web-limon.png") no-repeat;
     nav
       float:right;
       margin-top: 4px;
+      font-size:14px;
+      font-style:italic;
+      line-height:23px;
       ul
         padding:0;
         display:inline;
@@ -35,6 +44,9 @@ body.public
           display:inline-block;
           float:left;
           margin: 0 13px;
+          a:hover
+            color:#EEE
+            text-decoration:underline
     .social
       margin-right:10px;
       margin-top: 0;
@@ -42,79 +54,93 @@ body.public
         li
           margin: 0 4px;
           a
-            color:#000;
-            background:#fff;
             color: #000;
-            border-radius: 20px;
-            width: 27px;
+            background: #fff;
+            color: #000;
+            border-radius: 21px;
+            width: 22px;
             display: block;
-            height: 27px;
-            line-height: 27px;
+            height: 21px;
+            line-height: 22px;
+            margin-left: 0px;
+            font-style: normal;
+            font-size: 12px;
             text-align: center;
-            margin-left: 8px;
+            margin-top: 6px;
+            &:hover
+              opacity:.7
+              color:#000
+              text-decoration:none
       .behance
         text-transform:capitalize;
-        text-indent:2px;
-    .contact-container
-      position: absolute;
-      right: 0;
-      top: 46px;
-      width: 290px;
-      height: 372px;
-      z-index: 1000;
-      background: #FFFFFF;
-      padding-left: 20px;
-      opacity: 1;
-      p
-        color: #9C9F9E;
-
-      .social
-        margin: 0;
-        display: inline-block;
-        float: right;
-        position: relative;
-        bottom: 30px;
-        right: 20px;
-        ul
-          padding: 0;
-          margin: 0;
-          list-style-type: none;
-          li
-            display: inline-block;
-            a
-              padding: 4px;
-              background: black !important;
-              font-size: 18px;
-              color: white !important;
-
-      input
-        width: 250px;
-        margin-bottom: 18px;
-        background: #E2E4E3;
-        border:none;
-        padding: 8px;
-
+  .contact-container        
+    .ng-invalid
       button
-        height: 28px;
-        width: 59px;
-        font-size: 14px;
+        opacity:.5      
+  .contact-container
+    position: absolute;
+    right: 0;
+    top: 33px;
+    width: 290px;
+    height: 372px;
+    z-index: 1000;
+    background: #FFFFFF;
+    padding-left: 20px;
+    opacity: 1;
+    p
+      color: #9C9F9E;
+    .social
+      margin: 0;
+      display: inline-block;
+      float: right;
+      position: relative;
+      bottom: 30px;
+      right: 20px;
+      ul
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+        li
+          display: inline-block;
+          a
+            padding: 4px;
+            background: #000;
+            font-size: 18px;
+            color: #fff;
+            border-radius: 20px;
+            width: 25px;
+            height: 25px;
+            display: block;
+            margin-left: 8px;
+            text-align: center;
+            line-height: 26px;
+    input
+      width: 250px;
+      margin-bottom: 18px;
+      background: #E2E4E3;
+      border:none;
+      padding: 8px;
 
-      textarea
-        width: 250px;
-        margin-bottom: 18px;
-        background: #E2E4E3;
-        border:none;
-        padding: 8px;
-        height: 135px;
-        resize: none;
-      &.ng-hide-add,
-      &.ng-hide-remove
-        transition: 0.5s linear all;
-        -webkit-transition: 0.5s linear all;
-        display: block !important;
+    button
+      height: 28px;
+      width: 59px;
+      font-size: 14px;
+
+    textarea
+      width: 250px;
+      margin-bottom: 18px;
+      background: #E2E4E3;
+      border:none;
+      padding: 8px;
+      height: 135px;
+      resize: none;
+    &.ng-hide-add,
+    &.ng-hide-remove
+      transition: 0.5s linear all;
+      -webkit-transition: 0.5s linear all;
+      display: block !important;
       &.ng-hide
-        opacity: 0;
-        top: -600px;
+        top: -600px;      
 
 .info
   position: absolute;

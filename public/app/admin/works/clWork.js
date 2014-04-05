@@ -20,16 +20,13 @@ angular.module('app').factory('clWork', function ($q, clWorkData ) {
             }, function (response) {
                 dfd.reject(response.data.reason);
             });
-
             return dfd.promise;
-
         },
 
-        deleteUser: function (deleteWorkData) {          
-          var deleteWork = new clUser(deleteWorkData);
+        deleteWork: function (deleteWorkData) {          
+          var deleteWork = new clWorkData(deleteWorkData);                    
           var dfd = $q.defer();
-
-          deleteWork.$delete({_id: deleteWorkData._id}).then(function () {
+          deleteWork.$delete({_id: deleteWork._id}).then(function () {
               console.log("deleted work");
               dfd.resolve();
           }, function (response) {

@@ -1,4 +1,5 @@
-var Inquiries = require('mongoose').model('Inquiries');
+var Inquiries = require('mongoose').model('Inquiries'),
+    mailer = require('../utilities/mailer');
 
 
 exports.getInquiries = function(req, res) {
@@ -9,7 +10,8 @@ exports.getInquiries = function(req, res) {
 
 
 exports.createInquiry = function(req, res, next) {
-  var inquiryData = req.body;
+  var inquiryData = req.body,
+      sentDate = new Date(inquiryData.updated);
 
   Inquiries.create(inquiryData, function(err, user) {
     if (err) {
@@ -18,6 +20,23 @@ exports.createInquiry = function(req, res, next) {
         reason: err.toString()
       });
     }
+        
+    mailer.mailDefaults.to = "Claudio Limon <mail@claudiolimon.com.mx>, Jeffrey Nolte <jnolte@getmoxied.net>";  
+    mailer.mailDefaults.html = "Hi! you have a new message from the website:" + 
+    "<br/><br/><strong>From:</strong><br/> " + inquiryData.sender_name +
+    "<br/><br/><strong>Email:</strong><br/> " + inquiryData.sender_email +
+    "<br/><br/><strong>Message:</strong><br/><p> " + inquiryData.sender_message + "</p>" +
+    "<br/><br/><strong>Sent:</strong> " + sentDate.toString();
+    
+    mailer.smtpTransport.sendMail(mailer.mailDefaults, function(error, response){
+        if(error){
+            console.log(error);
+        }else{
+            console.log("Message sent: " + response.message);
+        }
+        mailer.smtpTransport.close();
+    });
+        
     res.send({
       inquiry_sent: "true"
     });
