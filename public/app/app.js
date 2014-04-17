@@ -15,6 +15,7 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
         .when('/', {templateUrl: '/partials/index', controller: 'mainCtrl'})
         .when('/about', {templateUrl: '/partials/about', controller: 'mainCtrl'})
         .when('/work', {templateUrl: '/partials/work-index', controller: 'mainCtrl'})
+        .when('/work/:categoryName', {templateUrl: '/partials/work-index', controller: 'mainCtrl'})
         .when('/work/detail', {templateUrl: '/partials/work-detail', controller: 'mainCtrl'})
         .when('/contact', {templateUrl: '/partials/contact', controller: 'mainCtrl'})
         .when('/admin/users', {templateUrl: '/partials/admin/users/index',

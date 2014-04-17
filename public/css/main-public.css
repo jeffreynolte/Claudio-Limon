@@ -361,8 +361,14 @@ body.public .contact-container.ng-hide-remove.ng-hide {
   height: 100%;
 }
 .flexslider .flex-control-nav {
-  top: 560px;
+  top: 10px;
   z-index: 900;
+  left: 7px;
+  width: auto;
+}
+.flexslider .flex-control-nav li {
+  margin-bottom: 10px;
+  display: block;
 }
 .flexslider .flex-control-nav li a {
   border: 1px solid #fff;

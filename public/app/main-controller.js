@@ -1,6 +1,20 @@
 'use strict';
 
-angular.module('app').controller('mainCtrl', function ($scope, clIdentity, clAuth, clNotifier, $location, $http) {
+angular.module('app').controller('mainCtrl', function ($scope, clIdentity, clAuth, clNotifier, $location, $http, $routeParams) {
+  
+  console.log($routeParams.categoryName)
+  
+    // if($routeParams.categoryName){
+      console.log("calling cat");
+      $http.get('/api/public/worksCat/'+$routeParams.categoryName).success(function (data) {
+        $scope.workCategory = data[0];
+      }).error(function (data, status) {
+        console.log("Error: ", error );
+        console.log("Status: ", status );
+      })
+    
+    // }
+    
   
     $scope.hideContact = true;
 
@@ -31,7 +45,15 @@ angular.module('app').controller('mainCtrl', function ($scope, clIdentity, clAut
     }
 
     $scope.aboutSlides = ['/img/limon-about.jpg'];
-
+    
+    $scope.quotes = [
+      "Art must be a form to connect the one",
+      "Art must be a form to connect the two",
+      "Art must be a form to connect the three",
+      "Art must be a form to connect the four",
+      "Art must be a form to connect the five",    
+    ]
+        
     $scope.slides = [
       '/img/web-limon-01.jpg',
       '/img/web-limon-02.jpg',
@@ -39,5 +61,12 @@ angular.module('app').controller('mainCtrl', function ($scope, clIdentity, clAut
       '/img/web-limon-04.jpg',
       '/img/web-limon-05.jpg'
     ];
+    
+    $scope.quote = $scope.quotes[0];      
+    
+    $scope.parseSlideQuote = function () {
+      var i = angular.element(".flex-active-slide").index()-1;
+      $scope.quote = $scope.quotes[i];      
+    }
 
 });

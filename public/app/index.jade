@@ -1,16 +1,17 @@
 .info
   h1.logo CLAUDIO LIMON
-  span "Art must be a form to connect the heart with the brain"
+  span {{quote}}
 .home-links
   ul
     li
-      a(href="#") art
+      a(href="/work/art") art
     li
-      a(href="#") design
+      a(href="/work/design") design
     li
-      a(href="#") illustration
-flex-slider(slide="s in slides" animation="slide")
+      a(href="/work/illustration") illustration
+flex-slider(slide="s in slides" animation="slide" after="parseSlideQuote()")
   li
     img(ng-src="{{s}}")
+    span Here is a test quote $index
 script(type="text/javascript").
   // window.user = !{ user };

@@ -19,6 +19,7 @@ module.exports = function (app) {
   app.delete('/api/users', users.deleteUser);
 
   // work api
+  app.get('/api/public/worksCat',  works.getWorksCat);
   app.get('/api/works', auth.requiresRole('admin'), works.getWorks);
   app.post('/api/works', works.createWork);
   app.put('/api/works', auth.requiresRole('admin'), works.updateWork);

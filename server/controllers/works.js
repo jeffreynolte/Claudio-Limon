@@ -17,6 +17,27 @@ exports.getWorks = function(req, res) {
   }
 }
 
+exports.getWorksCat = function(req, res) {
+  var workCat = req.query._id;
+  var workCat = req.query._id;
+  
+  console.log(req);
+  console.log(workCat);
+  res.send("hello working");
+
+  // if (workId) {
+  //   Work.findOne({
+  //     _id: workId
+  //   }).exec(function(err, collection) {
+  //     res.send(collection);
+  //   })
+  // } else {
+  //   Work.find({}).exec(function(err, collection) {
+  //     res.send(collection);
+  //   })
+  // }
+}
+
 exports.createWork = function(req, res, next) {
   var workData = req.body;
   Work.create(workData, function(err, user) {
