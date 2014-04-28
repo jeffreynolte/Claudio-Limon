@@ -1,39 +1,11 @@
 .work-content
-  figure.work-block
-    a(href="/work/detail")
-      img(src='/img/work-img.jpg')
-    figcaption
-      .figcaption-wrap
-        h4 Caption for work
-  figure.work-block
-    a(href="/work/detail")
-      img(src='/img/work-img.jpg')
-    figcaption
-      .figcaption-wrap
-        h4 Caption for work
-  figure.work-block
-    a(href="/work/detail")
-      img(src='/img/work-img.jpg')
-    figcaption
-      .figcaption-wrap
-        h4 Caption for work
-  figure.work-block
-    a(href="/work/detail")
-      img(src='/img/work-img.jpg')
-    figcaption
-      .figcaption-wrap
-        h4 Caption for work
-  figure.work-block
-    a(href="/work/detail")
-      img(src='/img/work-img.jpg')
-    figcaption
-      .figcaption-wrap
-        h4 Caption for work
-  figure.work-block
-    a(href="/work/detail")
-      img(src='/img/work-img.jpg')
-    figcaption
-      .figcaption-wrap
-        h4 Caption for work
+  div(ng-repeat="work in worksByCategory")
+    figure.work-block
+      a(href="/work/{{work._id}}")
+        img(src='/img/work-img.jpg')
+      figcaption
+        .figcaption-wrap
+          h4 {{work.title}}
 script(type="text/javascript").
   // window.user = !{ user };
+  

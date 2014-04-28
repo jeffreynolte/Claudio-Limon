@@ -4,18 +4,18 @@ angular.module('app').controller('mainCtrl', function ($scope, clIdentity, clAut
   
   console.log($routeParams.categoryName)
   
-    // if($routeParams.categoryName){
+    if($routeParams.categoryName){
       console.log("calling cat");
-      $http.get('/api/public/worksCat/'+$routeParams.categoryName).success(function (data) {
-        $scope.workCategory = data[0];
+      $http.get('/api/public/getWorksByCat?cat='+$routeParams.categoryName).success(function (data) {
+        console.log(data)
+        $scope.worksByCategory = data;
+        console.log($scope.worksByCategory);        
       }).error(function (data, status) {
         console.log("Error: ", error );
         console.log("Status: ", status );
-      })
+      })  
+    }    
     
-    // }
-    
-  
     $scope.hideContact = true;
 
     $scope.identity = clIdentity;

@@ -17,25 +17,22 @@ exports.getWorks = function(req, res) {
   }
 }
 
-exports.getWorksCat = function(req, res) {
-  var workCat = req.query._id;
-  var workCat = req.query._id;
+exports.getWorksByCat = function(req, res) {
+  console.log("getWorksByCat");
+  var workCat = req.query.cat;  
+  console.log("work category =", workCat);
   
-  console.log(req);
-  console.log(workCat);
-  res.send("hello working");
-
-  // if (workId) {
-  //   Work.findOne({
-  //     _id: workId
-  //   }).exec(function(err, collection) {
-  //     res.send(collection);
-  //   })
-  // } else {
-  //   Work.find({}).exec(function(err, collection) {
-  //     res.send(collection);
-  //   })
-  // }
+  if (workCat) {
+    Work.find({
+      categories: workCat
+    }).exec(function(err, collection) {
+      res.send(collection);
+    })
+  } else {
+    Work.find({}).exec(function(err, collection) {
+      res.send(collection);
+    })
+  }
 }
 
 exports.createWork = function(req, res, next) {

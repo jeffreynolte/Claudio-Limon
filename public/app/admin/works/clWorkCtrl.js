@@ -37,9 +37,11 @@ angular.module('app').controller('clWorkCtrl', function($scope, $location, clWor
     }
   }
       
+
+      
   // create work
   $scope.createWork = function(){
-          
+    
     var newWorkData = {
       title: $scope.title,
       subtitle: $scope.subtitle,
@@ -48,7 +50,7 @@ angular.module('app').controller('clWorkCtrl', function($scope, $location, clWor
       isFeatured: $scope.isFeatured,
       description: $scope.description,
       images: $scope.images,
-      categories: $scope.categories
+      categories: $scope.categories ? $scope.categories.replace(/ /g,'').split(',') : $scope.categories
     };
           
     clWork.createWork(newWorkData).then(function(){
@@ -78,6 +80,7 @@ angular.module('app').controller('clWorkCtrl', function($scope, $location, clWor
         
   $scope.updateWork = function () {
     
+    
     var newWorkData = {
       _id: $routeParams.workId,
       title: $scope.title,
@@ -87,10 +90,9 @@ angular.module('app').controller('clWorkCtrl', function($scope, $location, clWor
       isFeatured: $scope.isFeatured,
       description: $scope.description,
       images: $scope.images,
-      categories: $scope.categories
+      categories: $scope.categories ? $scope.categories.replace(/ /g,'').split(',') : $scope.categories
     };
     
-    console.log(newWorkData);
       
     clWork.updateWork(newWorkData).then(function () {      
       clNotifier.notify("Your work has been updated");

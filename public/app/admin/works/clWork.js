@@ -10,7 +10,7 @@ angular.module('app').factory('clWork', function ($q, clWorkData ) {
             });
             return dfd.promise;
         },
-
+        
         updateWork: function (newWorkData) {
             var newWork = new clWorkData(newWorkData);
             var dfd = $q.defer();
