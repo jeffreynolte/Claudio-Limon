@@ -2,8 +2,8 @@ var Work = require('mongoose').model('Work'),
   encrypt = require('../utilities/encryption');
 
 exports.getWorks = function(req, res) {
+  console.log("get Works");
   var workId = req.query._id;
-
   if (workId) {
     Work.findOne({
       _id: workId

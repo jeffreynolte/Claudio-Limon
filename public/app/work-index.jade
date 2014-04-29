@@ -1,8 +1,9 @@
 .work-content
+  h1(ng-show="noWorks") {{noWorksMessage}}
   div(ng-repeat="work in worksByCategory")
     figure.work-block
-      a(href="/work/{{work._id}}")
-        img(src='/img/work-img.jpg')
+      a(href="/work/detail/{{work._id}}")
+        img(ng-src="{{featuredImages[$index].url}}/convert?w=425&h=225&fit=scale")
       figcaption
         .figcaption-wrap
           h4 {{work.title}}

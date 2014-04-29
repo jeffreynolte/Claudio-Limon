@@ -1,17 +1,13 @@
+div(backstretch background-url="/img/web-limon-01.jpg")
 .info
-  h1.logo CLAUDIO LIMON
-  span {{quote}}
+  h1.logo CLAUDIO LIMON      
 .home-links
   ul
-    li
+    li.first
       a(href="/work/art") art
-    li
+    li.second
       a(href="/work/design") design
-    li
-      a(href="/work/illustration") illustration
-flex-slider(slide="s in slides" animation="slide" after="parseSlideQuote()")
-  li
-    img(ng-src="{{s}}")
-    span Here is a test quote $index
+    li.third
+      a(href="/work/illustration") illustration  
 script(type="text/javascript").
   // window.user = !{ user };

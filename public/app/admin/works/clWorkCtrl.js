@@ -79,8 +79,7 @@ angular.module('app').controller('clWorkCtrl', function($scope, $location, clWor
   }
         
   $scope.updateWork = function () {
-    
-    
+        
     var newWorkData = {
       _id: $routeParams.workId,
       title: $scope.title,
@@ -90,7 +89,7 @@ angular.module('app').controller('clWorkCtrl', function($scope, $location, clWor
       isFeatured: $scope.isFeatured,
       description: $scope.description,
       images: $scope.images,
-      categories: $scope.categories ? $scope.categories.replace(/ /g,'').split(',') : $scope.categories
+      categories: $scope.categories
     };
     
       

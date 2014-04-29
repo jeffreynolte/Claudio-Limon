@@ -1,20 +1,70 @@
 'use strict';
 
-angular.module('app').controller('mainCtrl', function ($scope, clIdentity, clAuth, clNotifier, $location, $http, $routeParams) {
-  
-  console.log($routeParams.categoryName)
-  
+angular.module('app').controller('mainCtrl', function ($scope, clIdentity, clAuth, clNotifier, $location, $http, $routeParams, $route, $rootScope) {
+    
+    
+    // get all works
+    if($location.$$path === "/work"){
+      console.log("getting all work");      
+      $http.get('/api/public/getAllWorks').success(function (data) {
+        if(data.length > 0){
+          $scope.worksByCategory = data;        
+          $scope.featuredImages = [];                              
+          // find our image in the collection with order = 0;
+          _.find(data, function(data){            
+            (data.images).forEach(function(img){
+              if(img.order === 0){
+                $scope.featuredImages.push(img);
+              }
+            })            
+          })                    
+        } else {
+          $scope.noWorks = true;
+          $scope.noWorksMessage = "Sorry there is no work in the category " + $routeParams.categoryName;
+        }
+      }).error(function (data, status) {
+        console.log("Error: ", error );
+        console.log("Status: ", status );
+      })  
+    }
+    
+    // get works by Cat
     if($routeParams.categoryName){
-      console.log("calling cat");
+      console.log("calling cat:", $routeParams.categoryName);      
       $http.get('/api/public/getWorksByCat?cat='+$routeParams.categoryName).success(function (data) {
-        console.log(data)
-        $scope.worksByCategory = data;
-        console.log($scope.worksByCategory);        
+        if(data.length > 0){
+          $scope.worksByCategory = data;        
+          $scope.featuredImages = [];          
+                    
+          // find our image in the collection with order = 0;
+          _.find(data, function(data){            
+            (data.images).forEach(function(img){
+              if(img.order === 0){
+                $scope.featuredImages.push(img);
+              }
+            })            
+          })                    
+        } else {
+          $scope.noWorks = true;
+          $scope.noWorksMessage = "Sorry there is no work in the category " + $routeParams.categoryName;
+        }
       }).error(function (data, status) {
         console.log("Error: ", error );
         console.log("Status: ", status );
       })  
     }    
+    
+    // get works single
+    if($routeParams.workId){
+      console.log("getting work by id:", $routeParams.workId)
+      $http.get('/api/public/getWorkById?_id='+$routeParams.workId).success(function (data) {
+        console.log(data);
+        $scope.workDetail = data;        
+      }).error(function (data, status) {
+        console.log("Error: ", error );
+        console.log("Status: ", status );
+      })    
+    }
     
     $scope.hideContact = true;
 
@@ -34,6 +84,8 @@ angular.module('app').controller('mainCtrl', function ($scope, clIdentity, clAut
     }).error(function(data, status) {
       console.warn('Error: ', status);
     });
+    
+    $scope.aboutSlides = ['/img/limon-about.jpg'];
 
     $scope.signout = function () {
         clAuth.logoutUser().then(function () {
@@ -43,30 +95,5 @@ angular.module('app').controller('mainCtrl', function ($scope, clIdentity, clAut
             $location.path('/admin');
         })
     }
-
-    $scope.aboutSlides = ['/img/limon-about.jpg'];
-    
-    $scope.quotes = [
-      "Art must be a form to connect the one",
-      "Art must be a form to connect the two",
-      "Art must be a form to connect the three",
-      "Art must be a form to connect the four",
-      "Art must be a form to connect the five",    
-    ]
-        
-    $scope.slides = [
-      '/img/web-limon-01.jpg',
-      '/img/web-limon-02.jpg',
-      '/img/web-limon-03.jpg',
-      '/img/web-limon-04.jpg',
-      '/img/web-limon-05.jpg'
-    ];
-    
-    $scope.quote = $scope.quotes[0];      
-    
-    $scope.parseSlideQuote = function () {
-      var i = angular.element(".flex-active-slide").index()-1;
-      $scope.quote = $scope.quotes[i];      
-    }
-
+                    
 });

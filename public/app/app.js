@@ -16,7 +16,7 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
         .when('/about', {templateUrl: '/partials/about', controller: 'mainCtrl'})
         .when('/work', {templateUrl: '/partials/work-index', controller: 'mainCtrl'})
         .when('/work/:categoryName', {templateUrl: '/partials/work-index', controller: 'mainCtrl'})
-        .when('/work/detail', {templateUrl: '/partials/work-detail', controller: 'mainCtrl'})
+        .when('/work/detail/:workId', {templateUrl: '/partials/work-detail', controller: 'mainCtrl'})
         .when('/contact', {templateUrl: '/partials/contact', controller: 'mainCtrl'})
         .when('/admin/users', {templateUrl: '/partials/admin/users/index',
             controller: 'clUserIndexCtrl', resolve: routeRoleChecks.admin
@@ -45,6 +45,15 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
 });
 
 angular.module('app').run(function ($rootScope, $location) {
+
+    $rootScope.$on('$routeChangeSuccess', function(evt, current, previous, rejection){
+      if($location.$$path === '/'){
+        $rootScope.bodyClass = "home";
+      } else {
+        $rootScope.bodyClass = "";
+      }
+    })
+    
     $rootScope.$on('$routeChangeError', function (evt, current, previous, rejection) {
         if (rejection === 'not authorized') {
             $location.path('/admin/index');

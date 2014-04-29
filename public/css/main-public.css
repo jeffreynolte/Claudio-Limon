@@ -1,6 +1,13 @@
 body {
   font-family: 'Asap', sans-serif;
 }
+body.public.home {
+  background: url("../img/web-limon-01.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 body.public {
   background: #eee;
   color: #fff;
@@ -189,24 +196,39 @@ body.public .contact-container.ng-hide-remove.ng-hide {
 .home-links {
   position: absolute;
   z-index: 999;
-  bottom: 30px;
+  bottom: 0;
   width: 100%;
   text-align: center;
 }
 .home-links ul {
   list-style-type: none;
   padding: 0;
-  display: inline;
+  display: inline-block;
+  width: 100%;
+  max-width: 960px;
+  margin: 0;
 }
 .home-links ul li {
+  width: 30%;
   display: inline-block;
+  border: 2px solid #fff;
+}
+.home-links ul li.second {
+  border-left: 0 none;
+  border-right: 0 none;
 }
 .home-links ul li a {
+  display: inline-block;
+  width: 100%;
+  background: #000;
   font-size: 24px;
   letter-spacing: 1px;
-  padding: 10px 15px;
-  border: 1px solid #fff;
-  margin: 0 5px;
+  margin: 0;
+  padding: 10px 0;
+}
+.home-links ul li a:hover {
+  color: #eee;
+  background: #333;
 }
 .about-content {
   position: absolute;
@@ -337,7 +359,7 @@ body.public .contact-container.ng-hide-remove.ng-hide {
   bottom: 0;
   left: 0;
   position: absolute;
-  width: 100%;
+  width: 405px;
   background: #000;
   color: #fff;
   padding: 10px;

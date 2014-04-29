@@ -16,7 +16,7 @@ html(lang='en', xmlns='http://www.w3.org/1999/xhtml', xmlns:fb='https://www.face
 
   //if lt IE 9
     script(src='http://html5shim.googlecode.com/svn/trunk/html5.js')
-  body.public(ng-app="app")
+  body(ng-app="app", ng-class="{{bodyClass}}", class="public {{bodyClass}}")
     div.nav-wrapper
       div.navigationwrap(ng-controller='mainCtrl')
         div.navigation

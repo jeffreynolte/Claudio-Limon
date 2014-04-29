@@ -1,11 +1,19 @@
 body
   font-family: 'Asap', sans-serif;
+
+body.public.home
+  background: url('../img/web-limon-01.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  
 body.public
   background: #eee;
   color:#fff;
   height:100%;
   overflow:hidden;
-  margin: 0;
+  margin: 0;    
   a
     color:#fff;
     text-decoration: none;
@@ -165,21 +173,36 @@ body.public
 .home-links
   position: absolute;
   z-index: 999;
-  bottom: 30px;
+  bottom: 0;
   width: 100%;
   text-align: center;
   ul
     list-style-type: none;
     padding: 0;
-    display: inline;
+    display: inline-block;
+    width:100%
+    max-width:960px
+    margin:0
     li
-      display:inline-block;
+      width:30%
+      display:inline-block
+      border: 2px solid #FFF;
+      &.second      
+        border-left: 0 none
+        border-right: 0 none            
       a
+        display:inline-block;
+        width:100%
+        background:#000
         font-size: 24px;
         letter-spacing: 1px;
-        padding: 10px 15px;
-        border: 1px solid #FFF;
-        margin: 0 5px;
+        margin: 0;
+        padding:10px 0
+        &:hover
+          color:#eee
+          background:#333
+
+
 
 
 .about-content
@@ -301,7 +324,7 @@ body.public
       bottom: 0;
       left: 0;
       position: absolute;
-      width: 100%;
+      width: 405px;
       background: #000;
       color: #FFF;
       padding: 10px;

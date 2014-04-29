@@ -20,6 +20,8 @@ module.exports = function (app) {
 
   // work api
   app.get('/api/public/getWorksByCat',  works.getWorksByCat);
+  app.get('/api/public/getWorkById',  works.getWorks);
+  app.get('/api/public/getAllWorks',  works.getWorks);
   app.get('/api/works', auth.requiresRole('admin'), works.getWorks);
   app.post('/api/works', works.createWork);
   app.put('/api/works', auth.requiresRole('admin'), works.updateWork);
