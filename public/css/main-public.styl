@@ -1,3 +1,5 @@
+html
+  -webkit-text-size-adjust: none;
 body
   font-family: 'Asap', sans-serif;
 
@@ -7,7 +9,14 @@ body.public.home
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  
+
+body.public.about
+  background: url('../img/limon-about.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+    
 body.public
   background: #eee;
   color:#fff;
@@ -159,8 +168,12 @@ body.public
   h1.logo
     height: 76px;
     position: relative;
-    background: url("../img/logo.png") 50% 50% no-repeat;
+    background-image: url("../img/logo.png")
     text-indent: -999em;
+    background-size: contain
+    background-position:center
+    background-repeat:no-repeat
+    
 
   span
     width:100%;
@@ -182,6 +195,7 @@ body.public
     display: inline-block;
     width:100%
     max-width:960px
+    min-width:320px
     margin:0
     li
       width:30%
@@ -364,3 +378,234 @@ button
   border: none;
   color: white;
 
+.mobile-nav-toggle
+  display:none
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 479px) and (orientation: portrait) {
+  
+
+.mobile-nav-toggle{
+  width:20px
+  height:20px
+  text-indent: -9999px
+  display: block
+  float:right
+  cursor:pointer
+  margin:10px 15px 0 0
+  div{
+    width:100%
+    display:block
+    margin-bottom:3px
+    border-top:3px solid #fff
+    float:left
+  }  
+}
+    
+.work-content{
+  width:100%  
+  margin:20px 0
+  .work-block{
+    clear:left
+    margin:0 0 20px 0
+    width:100%
+    height:200px
+    
+    img{
+      max-width:100%
+    }
+    .figcaption-wrap{
+      h4{
+        font-size:10px
+      }
+    }
+  }
+}
+
+body.public.about, body.public.home{
+  background:none
+}
+
+body.public{
+  background:none
+  .navigation{
+    .nav-wrapper-inner{
+      width:100%
+      display:block
+      background:#000
+      overflow:auto        
+      nav{
+        width:45%
+        float:left
+        padding:10px 0
+        ul{
+          li{
+            width:100%
+            display:block;
+          }
+        }
+      }
+      nav.social{
+        float:right
+        width: 100px
+        ul{
+          li{
+            float:right
+            width:auto
+          }
+        }
+      }
+    }  
+    .nav-wrapper-inner.ng-hide-add,
+    .nav-wrapper-inner.ng-hide-remove{
+      transition: 0.3s linear all;
+      -webkit-transition: 0.3s linear all;
+      display: block !important;    
+    }
+    .nav-wrapper-inner.ng-hide{
+      opacity: 0;
+    }
+  }
+    
+  .contact-container{
+    top:35px
+    width:310px
+    height:440px
+    input{
+      width:280px
+    }
+    textarea{
+      width:280px
+    }
+    a.close-form{
+      color: #999
+      float: right
+      font-weight: bold
+      margin: 15px 20px 0 0
+    }
+  }
+}  
+
+
+
+
+.info{
+  position:absolute
+  top:40%
+  width:93%
+  padding:0 10px
+  text-align:center
+}
+
+.home{
+  .container{
+    max-height:320px
+    height:320px
+    background: url('../img/web-limon-01.jpg') no-repeat center center
+    -webkit-background-size: cover
+    -moz-background-size: cover
+    -o-background-size: cover
+    background-size: cover
+  }
+}
+
+.about{
+  .container{
+    max-height:120px
+    height:120px
+    background: url('../img/image_about_mobile.png') no-repeat center center
+    -webkit-background-size: cover
+    -moz-background-size: cover
+    -o-background-size: cover
+    background-size: cover
+  }
+}
+
+.flexslider{
+  .flex-control-nav,
+  .flex-direction-nav{
+    display:none
+  }
+}
+.detail-content{
+  top:247px
+  width:100%
+  right:auto
+  .detail-content-box{
+    header{
+      width:auto
+      float:none
+      padding:0
+      h3{
+        text-indent:10px
+        background:#000
+        color:#FFF
+        width:100%
+        padding:5px 0
+      }
+      h4, i{
+        display:none
+      }      
+    }
+    .detail-content-text{
+      padding:0
+      background:#FFF
+      width:90%
+      color:#000
+      padding:0 0 0 10px
+      
+    }
+  }
+}
+
+.about-content{
+  top:30%
+  width:310px
+  padding:5px
+  background:#FFF
+  color:#000
+  p{
+    width:auto;
+    margin:0
+    text-align:center
+  }
+  .social{
+    width:100px;
+    ul{
+      li{
+        a{
+          color:#FFF
+          background:#000
+          
+        }         
+      }
+      .email {
+        width:100%
+        text-align:center
+        a{
+          color:#000
+          margin:0
+        } 
+      }
+    }
+  }    
+}
+
+.home-links{
+  width:auto
+  ul{
+    li{
+      width:99%
+      text-align:center
+      &.second{
+        border:2px solid #fff
+      }
+      &.first{
+        border-bottom:0 none
+      }
+      &.third{
+        border-top:0 none
+      }
+    }  
+  }  
+}    
+}

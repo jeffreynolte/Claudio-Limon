@@ -49,6 +49,8 @@ angular.module('app').run(function ($rootScope, $location) {
     $rootScope.$on('$routeChangeSuccess', function(evt, current, previous, rejection){
       if($location.$$path === '/'){
         $rootScope.bodyClass = "home";
+      } else if($location.$$path === '/about'){
+        $rootScope.bodyClass = "about";        
       } else {
         $rootScope.bodyClass = "";
       }

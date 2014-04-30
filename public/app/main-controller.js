@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('app').controller('mainCtrl', function ($scope, clIdentity, clAuth, clNotifier, $location, $http, $routeParams, $route, $rootScope) {
+angular.module('app').controller('mainCtrl', function ($scope, $window,clIdentity, clAuth, clNotifier, $location, $http, $routeParams, $route, $rootScope) {
     
     
     // get all works
@@ -66,27 +66,39 @@ angular.module('app').controller('mainCtrl', function ($scope, clIdentity, clAut
       })    
     }
     
-    $scope.hideContact = true;
 
+
+  
     $scope.identity = clIdentity;
-    $scope.hideWorkInfo = true;
+    
+    $scope.hideContact = true;
+    
+    if($window.document.width <= 320){
+      $scope.hideMobileNav = true;      
+      $scope.hideWorkInfo = false;
+    } else {
+      $scope.hideMobileNav = false;      
+    }
+
+    $scope.toggleContact = function() {
+      $scope.hideContact = !$scope.hideContact;
+    };    
 
     $scope.toggleWorkInfo = function() {
       $scope.hideWorkInfo = !$scope.hideWorkInfo;
     };
     
-    $scope.toggleContact = function() {
-      $scope.hideContact = !$scope.hideContact;
-    };
-    
+    $scope.toggleMobileNav = function () {
+      console.log("toggle");
+      $scope.hideMobileNav = !$scope.hideMobileNav;
+    }
+
     $http.get('/api/public/settings').success(function(data) {
       $scope.settings = data[0];
     }).error(function(data, status) {
       console.warn('Error: ', status);
     });
     
-    $scope.aboutSlides = ['/img/limon-about.jpg'];
-
     $scope.signout = function () {
         clAuth.logoutUser().then(function () {
             $scope.username = "";
