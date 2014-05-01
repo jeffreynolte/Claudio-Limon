@@ -2,8 +2,10 @@
 
 angular.module('app').controller('clInquiriesCtrl', function($scope, $location, clInquiries, clInquiriesData, clNotifier){
 
+
   $scope.inquiries = clInquiriesData.query();
   
+    
   $scope.deleteInquiry = function (id) {
     
     var deleteInquiryData = {

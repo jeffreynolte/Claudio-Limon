@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('app').controller('mainCtrl', function ($scope, $window,clIdentity, clAuth, clNotifier, $location, $http, $routeParams, $route, $rootScope) {
+angular.module('app').controller('mainCtrl', function ($scope, $window, $location, $http, $routeParams, $route, $rootScope) {
     
     
     // get all works
@@ -65,12 +65,7 @@ angular.module('app').controller('mainCtrl', function ($scope, $window,clIdentit
         console.log("Status: ", status );
       })    
     }
-    
-
-
-  
-    $scope.identity = clIdentity;
-    
+      
     $scope.hideContact = true;
     
     if($window.document.width <= 320){
