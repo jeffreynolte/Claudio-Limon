@@ -15,7 +15,6 @@ angular.module('app').controller('clSettingsCtrl', function($scope, clSettingsDa
     var newSettingsData = {
       page_title: $scope.settings.page_title,
       page_subtitle: $scope.settings.page_subtitle,
-      twitter_url: $scope.settings.twitter_url,
       facebook_url: $scope.settings.facebook_url,
       behance_url: $scope.settings.behance_url,
       global_email: $scope.settings.global_email,

@@ -44,7 +44,8 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
         })
 });
 
-angular.module('app').run(function ($rootScope, $location) {
+angular.module('app').run(function ($rootScope, $location) {  
+  
 
     $rootScope.$on('$routeChangeSuccess', function(evt, current, previous, rejection){
       if($location.$$path === '/'){
@@ -64,7 +65,9 @@ angular.module('app').run(function ($rootScope, $location) {
 });
 
 angular.module('app').controller('mainCtrl', function ($scope, clIdentity, clAuth, clNotifier, $location) {
-            
+    
+    $scope.identity = clIdentity;          
+    
     $scope.signout = function () {
         clAuth.logoutUser().then(function () {
             $scope.username = "";

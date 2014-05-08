@@ -67,7 +67,6 @@ module.exports = function(config){
   var settingsSchema = mongoose.Schema({
     page_title: String,
     page_subtitle: String,
-    twitter_url: String,
     facebook_url: String,
     behance_url: String,
     global_email: String,
@@ -81,7 +80,6 @@ module.exports = function(config){
       Settings.create({
         page_title: "Claudio Limon",
         page_subtitle: "Artist &amp; Illustrator",
-        twitter_url: 'http://twitter.com',
         facebook_url: "http://facebook.com",
         behance_url: "http://behance.com",
         global_email: "claudio@claudiolimon.com",

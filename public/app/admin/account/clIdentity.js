@@ -3,6 +3,7 @@ angular.module('app').factory('clIdentity', function ($window, clUser) {
   if (!!$window.bootstrappedUserObject) {
     currentUser = new clUser();
     angular.extend(currentUser, $window.bootstrappedUserObject);
+    console.log(currentUser);
   }
   return {
     currentUser: currentUser,
