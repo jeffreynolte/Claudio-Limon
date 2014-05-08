@@ -57,7 +57,6 @@ exports.updateWork = function(req, res) {
   Work.findById(workUpdates._id, function(err, work) {
             
     work.title = workUpdates.title;
-    work.subtitle = workUpdates.subtitle;
     work.isPublic = workUpdates.isPublic;
     work.description = workUpdates.description;
     work.images = workUpdates.images;

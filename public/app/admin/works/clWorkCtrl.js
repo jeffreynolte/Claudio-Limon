@@ -45,9 +45,7 @@ angular.module('app').controller('clWorkCtrl', function($scope, $location, clWor
     var newWorkData = {
       title: $scope.title,
       subtitle: $scope.subtitle,
-      quote: $scope.quote,
       isPublic: $scope.isPublic,
-      isFeatured: $scope.isFeatured,
       description: $scope.description,
       images: $scope.images,
       categories: $scope.categories ? $scope.categories.replace(/ /g,'').split(',') : $scope.categories
@@ -68,9 +66,7 @@ angular.module('app').controller('clWorkCtrl', function($scope, $location, clWor
       
       $scope.title = work.title;
       $scope.subtitle = work.subtitle;
-      $scope.quote = work.quote;
       $scope.isPublic = work.isPublic;
-      $scope.isFeatured = work.isFeatured;
       $scope.description = work.description;
       $scope.images = work.images;
       $scope.categories = work.categories;
@@ -84,9 +80,7 @@ angular.module('app').controller('clWorkCtrl', function($scope, $location, clWor
       _id: $routeParams.workId,
       title: $scope.title,
       subtitle: $scope.title,
-      quote: $scope.quote,
       isPublic: $scope.isPublic,
-      isFeatured: $scope.isFeatured,
       description: $scope.description,
       images: $scope.images,
       categories: $scope.categories

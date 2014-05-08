@@ -5,7 +5,6 @@
       thead
         tr  
           th Title
-          th Subtitle
           th Public ?
           th Description
           th Categories
@@ -13,7 +12,6 @@
           th Edit
         tr(ng-repeat="work in works")
           td {{work.title}}
-          td {{work.subtitle}}
           td {{work.isPublic}}
           td {{work.description}}
           td {{work.categories}}

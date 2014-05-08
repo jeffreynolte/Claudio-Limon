@@ -48,10 +48,8 @@ module.exports = function(config){
 
   var workSchema = mongoose.Schema({
     title: String,
-    subtitle: String,
     quote: String,
     isPublic: Boolean,
-    isFeatured: Boolean,
     description: String,
     updated: {type: Date, default: Date.now},
     images: [{
