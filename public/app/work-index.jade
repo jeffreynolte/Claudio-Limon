@@ -1,5 +1,5 @@
 .work-content
-  h1(ng-show="noWorks") {{noWorksMessage}}
+  h1(ng-show="noWorks" ng-controller='workCtrl') {{noWorksMessage}}
   div(ng-repeat="work in worksByCategory")
     figure.work-block
       a(href="/work/detail/{{work._id}}")
@@ -7,6 +7,4 @@
       figcaption
         .figcaption-wrap
           h4 {{work.title}}
-script(type="text/javascript").
-  // window.user = !{ user };
   

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('app').controller('mainCtrl', function ($scope, $window, $location, $http, $routeParams, $route, $rootScope) {
+angular.module('app').controller('mainCtrl', function ($scope, $window, $location, $http, $routeParams, $route, $rootScope, clAuth, clNotifier, clIdentity) {
     
     
     // get all works
@@ -94,6 +94,8 @@ angular.module('app').controller('mainCtrl', function ($scope, $window, $locatio
       console.warn('Error: ', status);
     });
     
+    $scope.identity = clIdentity;          
+     
     $scope.signout = function () {
         clAuth.logoutUser().then(function () {
             $scope.username = "";
@@ -101,6 +103,5 @@ angular.module('app').controller('mainCtrl', function ($scope, $window, $locatio
             clNotifier.notify("You have successfully logged out");
             $location.path('/admin');
         })
-    }
-                    
+    }                    
 });

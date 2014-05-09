@@ -63,17 +63,3 @@ angular.module('app').run(function ($rootScope, $location) {
         }
     })
 });
-
-angular.module('app').controller('mainCtrl', function ($scope, clIdentity, clAuth, clNotifier, $location) {
-    
-    $scope.identity = clIdentity;          
-    
-    $scope.signout = function () {
-        clAuth.logoutUser().then(function () {
-            $scope.username = "";
-            $scope.password = "";
-            clNotifier.notify("You have successfully logged out");
-            $location.path('/admin');
-        })
-    }
-});
