@@ -99,6 +99,7 @@ body.public
     right: 0;
     top: 33px;
     width: 290px;
+    height: 372px;
     z-index: 1000;
     background: #FFFFFF;
     padding-left: 20px;
@@ -380,7 +381,7 @@ button
 .mobile-nav-toggle
   display:none
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 479px) and (orientation: portrait) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
   
 
 .mobile-nav-toggle{
@@ -588,23 +589,132 @@ body.public{
     }
   }    
 }
-
-.home-links{
-  width:auto
-  ul{
-    li{
-      width:99%
-      text-align:center
-      &.second{
-        border:2px solid #fff
-      }
-      &.first{
-        border-bottom:0 none
-      }
-      &.third{
-        border-top:0 none
-      }
-    }  
-  }  
-}    
+    
 }
+
+@media only screen and (max-device-width: 320px) and (orientation : portrait){
+  
+  .home-links{
+    width:auto
+    ul{
+      li{
+        width:99%
+        text-align:center
+        &.second{
+          border:2px solid #fff
+        }
+        &.first{
+          border-bottom:0 none
+        }
+        &.third{
+          border-top:0 none
+        }
+      }  
+    }  
+  }
+  
+}
+// 
+@media only screen and (max-device-width: 480px) and (orientation : landscape){
+  
+  body.public{
+    .contact-container{
+      top:0
+      width:550px
+      height:280px
+      textarea{
+        height:60px
+      }
+      button{
+        float:left
+        width:295px        
+      }
+      .social{
+        float:left
+        bottom:10px
+        right:0
+      }
+    }
+  }
+ 
+ .detail-content{
+   top: 410px
+ } 
+ .home-links{
+   width:100%
+   ul{
+     li{
+       width: 30%     
+       border-top: 1px solid #fff
+       border-left: 1px solid #fff
+       border-bottom: 1px solid #fff
+     }
+     &.first{
+       border-top: 1px solid #fff       
+       border-bottom: 1px solid #fff
+       border-right: 1px solid #fff
+       border-left: 1px solid #fff
+     }
+     &.second{
+       border-top: 1px solid #fff
+       border-right: 1px solid #fff
+       border-bottom: 1px solid #fff
+       border-left:0 none
+     }
+     &.third{
+       border: 1px solid #fff
+     }
+   }   
+ }  
+ 
+
+ .work-content{
+   .work-block{
+      height:256px
+     figcaption{
+       width: 480px
+     }
+     img{
+       margin-left:60px
+     }
+   }
+ }
+ 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

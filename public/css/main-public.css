@@ -113,6 +113,7 @@ body.public .contact-container {
   right: 0;
   top: 33px;
   width: 290px;
+  height: 372px;
   z-index: 1000;
   background: #fff;
   padding-left: 20px;
@@ -423,7 +424,7 @@ button {
 .mobile-nav-toggle {
   display: none;
 }
-@media only screen and (min-device-width: 320px) and (max-device-width: 479px) and (orientation: portrait) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
   .mobile-nav-toggle {
     width: 20px;
     height: 20px;
@@ -596,6 +597,8 @@ button {
     color: #000;
     margin: 0;
   }
+}
+@media only screen and (max-device-width: 320px) and (orientation : portrait) {
   .home-links {
     width: auto;
   }
@@ -611,5 +614,60 @@ button {
   }
   .home-links ul li.third {
     border-top: 0 none;
+  }
+}
+@media only screen and (max-device-width: 480px) and (orientation : landscape) {
+  body.public .contact-container {
+    top: 0;
+    width: 550px;
+    height: 380px;
+  }
+  body.public .contact-container textarea {
+    height: 60px;
+  }
+  body.public .contact-container button {
+    float: left;
+    width: 295px;
+  }
+  body.public .contact-container .social {
+    float: left;
+    bottom: 10px;
+    right: 0;
+  }
+  .detail-content {
+    top: 410px;
+  }
+  .home-links {
+    width: 100%;
+  }
+  .home-links ul li {
+    width: 30%;
+    border-top: 1px solid #fff;
+    border-left: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+  }
+  .home-links ul.first {
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    border-right: 1px solid #fff;
+    border-left: 1px solid #fff;
+  }
+  .home-links ul.second {
+    border-top: 1px solid #fff;
+    border-right: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    border-left: 0 none;
+  }
+  .home-links ul.third {
+    border: 1px solid #fff;
+  }
+  .work-content .work-block {
+    height: 256px;
+  }
+  .work-content .work-block figcaption {
+    width: 480px;
+  }
+  .work-content .work-block img {
+    margin-left: 60px;
   }
 }
