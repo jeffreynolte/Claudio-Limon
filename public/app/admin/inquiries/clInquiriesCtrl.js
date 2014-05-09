@@ -3,10 +3,7 @@
 angular.module('app').controller('clInquiriesCtrl', function($scope, $location, clInquiries, clInquiriesData, clNotifier){
 
 
-  console.log("inside inquiries");
-  clInquiriesData.query(function(data){
-    $scope.inquiries = data;
-  });
+  $scope.inquiries = clInquiriesData.query();
   
     
   $scope.deleteInquiry = function (id) {
