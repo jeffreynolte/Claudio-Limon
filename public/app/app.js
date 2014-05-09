@@ -44,7 +44,7 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
         })
 });
 
-angular.module('app').run(function ($rootScope, $location) {  
+angular.module('app').run(function ($rootScope, $location, $http) {  
   
 
     $rootScope.$on('$routeChangeSuccess', function(evt, current, previous, rejection){
@@ -62,4 +62,11 @@ angular.module('app').run(function ($rootScope, $location) {
             $location.path('/admin/index');
         }
     })
+    
+    $http.get('/api/public/settings').success(function(data) {
+      $rootScope.settings = data[0];
+    }).error(function(data, status) {
+      console.warn('Error: ', status);
+    });
+    
 });

@@ -2,13 +2,11 @@
 
 angular.module('app').controller('clInquiriesCtrl', function($scope, $location, clInquiries, clInquiriesData, clNotifier){
 
-  
 
-
-  $scope.inquiries = function () {
-    console.log("inquiries");
-    clInquiriesData.query();    
-  }
+  console.log("inside inquiries");
+  clInquiriesData.query(function(data){
+    $scope.inquiries = data;
+  });
   
     
   $scope.deleteInquiry = function (id) {

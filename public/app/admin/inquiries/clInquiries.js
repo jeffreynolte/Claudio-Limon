@@ -2,6 +2,7 @@
 
 angular.module('app').factory('clInquiries', function ($q, clInquiriesData) {
     return {
+              
         createInquiry: function (newInquiryData) {
             var newInquiry = new clInquiriesData(newInquiryData);
             var dfd = $q.defer();

@@ -87,13 +87,7 @@ angular.module('app').controller('mainCtrl', function ($scope, $window, $locatio
       console.log("toggle");
       $scope.hideMobileNav = !$scope.hideMobileNav;
     }
-
-    $http.get('/api/public/settings').success(function(data) {
-      $scope.settings = data[0];
-    }).error(function(data, status) {
-      console.warn('Error: ', status);
-    });
-    
+        
     $scope.identity = clIdentity;          
      
     $scope.signout = function () {

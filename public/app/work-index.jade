@@ -1,5 +1,5 @@
 .work-content
-  h1(ng-show="noWorks" ng-controller='workCtrl') {{noWorksMessage}}
+  h1(ng-show="noWorks") {{noWorksMessage}}
   div(ng-repeat="work in worksByCategory")
     figure.work-block
       a(href="/work/detail/{{work._id}}")
