@@ -1,6 +1,5 @@
 var path = require('path');
 var rootPath = path.normalize(__dirname + '/../../');
-var secrets = require('./secrets') || "";
 
 module.exports = {
   development: {
