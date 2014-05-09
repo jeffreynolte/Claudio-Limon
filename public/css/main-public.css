@@ -620,7 +620,7 @@ button {
   body.public .contact-container {
     top: 0;
     width: 550px;
-    height: 380px;
+    height: 280px;
   }
   body.public .contact-container textarea {
     height: 60px;
