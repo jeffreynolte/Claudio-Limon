@@ -9,17 +9,15 @@ module.exports = {
     port: process.env.PORT || 3000
   },
   production: {
-    db: process.env.DB_URL || secrets.production.db,
+    db: process.env.DB_URL,
     rootPath: rootPath,
     port: process.env.PORT || 80
   },
   mailer: {
     auth: {
-      user: process.env.MAIL_USER || secrets.mailer.auth.user,
-      pass: process.env.MAIL_PASS || secrets.mailer.auth.pass
+      user: process.env.MAIL_USER,
+      pass: process.env.MAIL_PASS
     },
     defaultFromAddress: "Claudio Limon <mail@claudiolimon.com.mx>"
   }
 }
-
-console.log(secrets);
